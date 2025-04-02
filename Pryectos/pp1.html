@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Description" content="Proyecto Power BI - Portafolio Sergio Hueramán" />
-    <title>Proyecto Power BI</title>
-    <link rel="stylesheet" href="/stile.css" />
-    <link rel="stylesheet" href="/style.css" />
+    <meta name="Description" content="Planillas Personalisadas - Portafolio Sergio Hueramán" />
+    <title>Plantillas Personal</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../stile.css" />
 
     <link rel="stylesheet" href="https://unpkg.com/primeflex@^3/primeflex.css">
     <link rel="stylesheet" href="https://unpkg.com/primeflex/themes/saga-blue.css">
@@ -20,7 +20,7 @@
     <header class="flex w-full fixed top-0 z-1">
         <nav class="flex justify-content-between w-full navbar">
             <span class="logo cursor-pointer" onclick="scrollToSection('home')">
-                <img src="/assets/logo.png" alt="Logo portafolio" width="50" height="50">
+                <img src="../assets/logo.png" alt="Logo portafolio" width="50" height="50">
             </span>
             <input type="checkbox" aria-label="Checkbox para mostrar y quitar hamburger menu"
                 class="checkbox xl:hidden">
@@ -31,10 +31,10 @@
             </div>
             <div class="header__info flex align-items-center gap-3">
                 <ul class="flex flex-column xl:flex-row list-none">
-                    <li onclick="window.location.href='/index.html#about'">Sobre mí</li>
-                    <li onclick="window.location.href='/index.html#services'">Servicios</li>
-                    <li onclick="window.location.href='/index.html#portfolio'">Portafolio</li>
-                    <li onclick="window.location.href='/index.html#contact'">Contacto</li>
+                    <li onclick="window.location.href='../index.html#about'">Sobre mí</li>
+                    <li onclick="window.location.href='../index.html#services'">Servicios</li>
+                    <li onclick="window.location.href='../index.html#portfolio'">Portafolio</li>
+                    <li onclick="window.location.href='../index.html#contact'">Contacto</li>
                 </ul>
                 <div class="hireMe__button pt-4">
                     <a href="https://wa.me/56956071607" target="_blank" aria-label="Enviar mensaje por WhatsApp"
@@ -50,50 +50,43 @@
     <div class="container">
         <section class="project-content">
             <div class="back-button">
-                <a href="/index.html"><i class="fa-solid fa-arrow-left"></i> Volver al portafolio</a>
+                <a href="../index.html#portfolio"><i class="fa-solid fa-arrow-left"></i> Volver al portafolio</a>
             </div>
             
             <div class="project-title text-center">
-                <h1 class="text-3xl md:text-5xl">Análisis Demográfico Mundial: Tendencias Poblacionales y Calidad de Vida</h1>
+                <h1 class="text-3xl md:text-5xl">Sistema Integral de Gestión y Control de EPP</h1>
             </div>
-            
 
-            <!-------ICONOS---->
             <div class="repo-container">
-                <a href="https://drive.google.com/drive/folders/11c616Obe8KbtaW-BmWWbHWbTlvLhog1j?usp=drive_link" class="repo-link">
+                <a href="https://drive.google.com/file/d/1tuEXZ39x0tCnKD9Wx2ULBjof-IoW3FsG/view?usp=drive_link" class="repo-link">
                     <div class="repo-box">
-                        <img src="/assets/drive.png" alt="GitHub">
+                        <img src="../assets/drive.png" alt="GitHub">
                         
                     </div>
                 </a>
             </div>
-            
-            <!-----DASHBOARD---->
-            <div class="powerbi-container">
-                <iframe title="Proyecto 2" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMTQ0YTk1MmItODU4Ny00M2JmLTlhY2ItYmU4ZTYxOWEyZmQyIiwidCI6ImY5ZDI1NzZlLTIwM2EtNDFlNS05NjBiLWY0Nzc0MGY1YjljMSIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+                    
+            <div class="planillas">
+                <img src="../assets/pp1.gif" alt="">
             </div>
 
             <div class="project-description text-gray-500 text-center">
-                <p>Este dashboard interactivo ofrece una visión integral de la demografía mundial, centrándose en tres indicadores clave: población global, mortalidad infantil y esperanza de vida. La herramienta permite a los usuarios explorar las interrelaciones entre estos factores demográficos fundamentales.</p>
-            </div>
-            
-            <!---------IMAGEN-->
-            <div class="imagendb-container">
-                <img src="/assets/db-d2.gif" alt="Descripción de la imagen" width="800">
+                <p>Esta planilla digital funciona como un sistema completo para administrar la entrega, seguimiento y análisis de Equipos de Protección Personal en la empresa. Permite registrar cada entrega, monitorear inventarios, asignar equipos a trabajadores específicos y analizar los gastos asociados, facilitando tanto el cumplimiento normativo como la optimización de recursos.</p>
             </div>
             
             <div class="project-description text-gray-500 mt-6">
                 <h2 class="text-xl mb-3">Características principales:</h2>
                 <ul class="list-disc pl-6">
-                    <li>Visualización geográfica de datos poblacionales</li>
-                    <li>Correlación entre desarrollo y esperanza de vida</li>
-                    <li>Paneles comparativos por continente y país</li>
-                    <li>Integración de múltiples fuentes de datos</li>
+                    <li>Análisis por tipo de EPP</li>
+                    <li>Registro por trabajador</li>
+                    <li>bInterfaz visual: Utiliza gráficos circulares y de barras para facilitar la comprensión rápida de la información.</li>
+                    <li>Navegación por pestañas: Cuenta con secciones como "Registro", "Maestro", "EPP", "Análisis" y "Dashboard" para una gestión completa.</li>
+                    
                 </ul>
             </div>
             
             <div class="back-button">
-                <a href="/index.html#portfolio"><i class="fa-solid fa-arrow-left"></i> Volver al portafolio</a>
+                <a href="../index.html#portfolio"><i class="fa-solid fa-arrow-left"></i> Volver al portafolio</a>
             </div>
         </section>
     </div>
@@ -141,7 +134,7 @@
 
     <script>
         function scrollToSection(sectionId) {
-            window.location.href = "/index.html#" + sectionId;
+            window.location.href = "../index.html#" + sectionId;
         }
     </script>
 </body>
