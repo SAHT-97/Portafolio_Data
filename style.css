@@ -23,6 +23,9 @@ body {
     color: var(--font-color);
     height: 100vh;
     max-width: 100vw;
+    font-size: 17px;
+    line-height: 1.5;
+
 }
 
 .container {
@@ -456,13 +459,14 @@ footer h3, footer p {
 
 .project-title {
     margin-bottom: 20px;
+    font-size: 20px;
 }
 
 .project-description {
-    padding-top: 1rem;
     margin-bottom: 30px;
-    line-height: 1.6;
-    font-style: italic;
+    line-height: 1.5;
+    font-size: 17px;
+
 }
 
 
@@ -557,8 +561,8 @@ footer h3, footer p {
 .imagendb-container img {
     padding-top: 1rem;
     max-width: 100%;
-    height: 100%;
-    width: 100%;
+    height: small;
+    width: small;
     border-radius: 20px;
     
 }
@@ -688,4 +692,15 @@ footer h3, footer p {
     .images-title {
         font-size: 1.8rem;
     }
+}
+.video-container {
+    display: flex;
+    align-items: center;
+    background-color: #000; 
+    justify-content: center;
+    /* Opcional */
+}
+
+.t_descrip {
+    margin-top: 4rem;
 }
