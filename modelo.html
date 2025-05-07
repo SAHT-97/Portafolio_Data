@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Financiero Dashboard | Sergio Hueramán</title>
+    <link rel="icon" href="./assets/ICONS/favicon_saht.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="proyecto-styles.css">
+    <!-- Fuente Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Prism.js para resaltado de código -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+
+<body>
+    <!-- Header con navegación (conservado del original) -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./assets/ICONS/portafolio_saht.svg" alt="Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#proyectos">Proyectos</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/56956071607" target="_blank" aria-label="Enviar mensaje por WhatsApp"
+                class="btn-contacto"><i class="fab fa-whatsapp"> </i> Contacto</a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Portada del proyecto -->
+    <section id="proyecto-hero" class="section">
+        <div class="container">
+            <div class="badge">Proyecto de Análisis</div>
+            <h1>Análisis Financiero Dashboard</h1>
+            <p class="hero-subtitle">Visualización interactiva de KPIs financieros para toma de decisiones estratégicas
+            </p>
+            <a href="mailto:andreshueraman.st@gmail.com" class="btn btn-primary">Contáctame para un proyecto similar</a>
+        </div>
+    </section>
+
+    <!-- Resumen ejecutivo en dos columnas -->
+    <section id="resumen" class="section">
+        <div class="container">
+            <div class="resumen-grid">
+                <div class="subtitulo-proyectos">
+                    <h2>Resumen del Proyecto</h2>
+                    <p>Este dashboard interactivo para análisis financiero soluciona el problema de visualización
+                        fragmentada de KPIs críticos, permitiendo a los directivos tomar decisiones basadas en datos en
+                        tiempo real. El proyecto incrementó la velocidad de identificación de tendencias en un 40% y
+                        mejoró la precisión en la previsión de flujo de caja en un 25%.</p>
+                    <div class="tecnologias-usadas">
+                        <span>Tecnologías:</span>
+                        <img src="./assets/ICONS/Power Bi.svg" alt="Power BI">
+                        <img src="./assets/ICONS/Excel.svg" alt="Excel">
+                        <img src="./assets/ICONS/SQL.svg" alt="SQL">
+                    </div>
+                </div>
+                <div class="resumen-imagen">
+                    <video width="640" height="360" controls autoplay loop muted>
+                        <source src="./assets/Las Araucarias/V_LAS.mp4" type="video/mp4">
+                        Tu navegador no soporta videos MP4.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Línea de tiempo (metodología) -->
+    <section id="metodologia" class="section">
+        <div class="container">
+            <div class="subtitulo-proyectos">
+                <h2 ">Metodología Aplicada</h2>
+            <div class=" timeline">
+                    <div class="timeline-item"
+                        data-tooltip="Extracción de datos de 3 fuentes distintas: ERP interno, Excel y datos de mercado">
+                        <div class="timeline-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Recolección</h3>
+                    </div>
+                    <div class="timeline-item"
+                        data-tooltip="Proceso ETL para normalizar datos, eliminar inconsistencias y preparar para análisis">
+                        <div class="timeline-icon">
+                            <i class="fas fa-broom"></i>
+                        </div>
+                        <h3>Limpieza</h3>
+                    </div>
+                    <div class="timeline-item"
+                        data-tooltip="Creación de modelos relacionales y cálculo de métricas financieras clave">
+                        <div class="timeline-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Modelado</h3>
+                    </div>
+                    <div class="timeline-item"
+                        data-tooltip="Desarrollo de dashboard interactivo con filtros dinámicos y alertas automáticas">
+                        <div class="timeline-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Visualización</h3>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!--------------DESCRIPCION-->
+    <section id="descripcion" class="section">
+        <div class="container">
+            <div class="subtitulo-proyectos">
+                <h2>Información Técnica</h2>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita aliquam cupiditate
+                    voluptates
+                    blanditiis omnis, eveniet reiciendis officia itaque vel, enim hic? Fugiat, id cum aspernatur
+                    temporibus
+                    facilis voluptates dolorem.</P>
+                <div class="subtitulo-proyectos">
+                </div>
+
+    </section>
+
+    <!-- Insights destacados en grid -->
+    <section id="insights" class="section">
+        <div class="container">
+            <div class="subtitulo-proyectos">
+                <h2>Principales Insights</h2>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <div class="insight-icon">
+                            <i class="fas fa-arrow-trend-up"></i>
+                        </div>
+                        <h3>Crecimiento por Segmento</h3>
+                        <p>Identificación del segmento B2B como principal motor de crecimiento con un 32% anual vs 18%
+                            en
+                            B2C.</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>Optimización de Flujo</h3>
+                        <p>Reducción del ciclo de cobro en 12 días mediante análisis de patrones de pago de clientes.
+                        </p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Rentabilidad por Canal</h3>
+                        <p>El canal digital muestra un 27% más de margen que el canal tradicional tras análisis de
+                            costos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de dashboard interactivo -->
+    <section id="dashboard" class="section">
+        <div class="container">
+            <div class="subtitulo-proyectos">
+                <h2>Dashboard Interactivo</h2>
+                <p class="dashboard-instruccion">Utiliza los filtros por período o categoría para explorar los datos</p>
+                <div class="dashboard-container">
+                    <iframe title="Proyecto 4.0" style="width:100%; height:612px;"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiNTMzY2NjMWEtODdkMS00N2M0LTg2OTMtNGNmMTI0YzhkYmQzIiwidCI6ImY5ZDI1NzZlLTIwM2EtNDFlNS05NjBiLWY0Nzc0MGY1YjljMSIsImMiOjR9&embedImagePlaceholder=true"
+                        frameborder="0" allowFullScreen="true"></iframe>
+                    <div class="dashboard-placeholder">
+                        <img src="./assets/c-d3.png" alt="Dashboard Interactivo" class="dashboard-image">
+                        <div class="dashboard-overlay">
+                            <a href="#contacto" class="btn btn-light">Solicitar Demo en Vivo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="project-gallery" class="section">
+        <div class="container">
+            <div class="subtitulo-proyectos">
+                <h2>Galería del Proyecto</h2>
+                <p>Vistas clave de las herramientas y análisis realizados.</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item"
+                        onclick="abrirModal('Limpieza de Datos con Power Query', './assets/PLA_DC.png', 'Esta imagen muestra el proceso de limpieza y transformación de datos utilizando Power Query en Excel. La herramienta permite automatizar la preparación de datos, eliminando duplicados, corrigiendo errores y formateando la información para su posterior análisis. En este ejemplo, se han aplicado varias transformaciones como filtrado, reemplazo de valores y creación de columnas calculadas para optimizar la calidad de los datos.')">
+                        <img src="./assets/PLA_DC.png" alt="Planilla Excel - Limpieza de Datos con Power Query">
+                        <p class="caption">Limpieza y transformación con Power Query</p>
+                        <div class="badge">Ver detalle </div>
+                    </div>
+                    <div class="gallery-item"
+                        onclick="abrirModal('Análisis con Tabla Dinámica', './assets/excel-tabla-dinamica.png', 'En esta visualización se presenta un análisis detallado de ventas por producto utilizando tablas dinámicas de Excel. Las tablas dinámicas permiten resumir grandes cantidades de datos de manera interactiva, facilitando la identificación de patrones y tendencias. Este análisis muestra el rendimiento de cada producto por categoría, región y período temporal, permitiendo identificar oportunidades de mejora y productos estrella.')">
+                        <img src="./assets/excel-tabla-dinamica.png"
+                            alt="Planilla Excel - Tabla Dinámica de Ventas por Producto">
+                        <p class="caption">Análisis con Tabla Dinámica en Excel</p>
+                        <div class="badge">Ver detalle </div>
+                    </div>
+                    <div class="gallery-item"
+                        onclick="abrirModal('Gráfico de Tendencias en Excel', './assets/excel-grafico-tendencia.png', 'Este gráfico de líneas muestra la evolución de las ventas durante los últimos 12 meses. Se puede observar un incremento significativo en el segundo trimestre, seguido de una estabilización en los meses posteriores. El análisis de tendencias nos permite identificar patrones estacionales y prever comportamientos futuros para una mejor planificación estratégica.')">
+                        <img src="./assets/excel-grafico-tendencia.png"
+                            alt="Planilla Excel - Gráfico de Tendencia de Ventas">
+                        <p class="caption">Gráfico de Tendencias en Excel</p>
+                        <div class="badge">Ver detalle </div>
+                    </div>
+                    <div class="gallery-item"
+                        onclick="abrirModal('Dashboard General en Power BI', './assets/powerbi-dashboard-general.png', 'Este dashboard general desarrollado en Power BI presenta una visión completa del rendimiento del negocio. Incluye KPIs clave como ventas totales, margen de beneficio, productos más vendidos y rendimiento por región. Las visualizaciones interactivas permiten profundizar en los datos y descubrir insights que impulsan la toma de decisiones estratégicas. Este panel se actualiza automáticamente con los últimos datos disponibles.')">
+                        <img src="./assets/powerbi-dashboard-general.png" alt="Dashboard Power BI - Vista General">
+                        <p class="caption">Dashboard General en Power BI</p>
+                        <div class="badge">Ver detalle </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="miModal" class="modal">
+            <div class="modal-contenido">
+                <div class="modal-header">
+                    <h2 id="modal-titulo" class="modal-titulo">Título del Modal</h2>
+                    <button class="cerrar-modal" onclick="cerrarModal()">&times;</button>
+                </div>
+                <div class="modal-cuerpo">
+                    <div class="modal-imagen-container">
+                        <img id="modal-imagen" src="" alt="Imagen" class="modal-imagen">
+                    </div>
+                    <div id="modal-texto" class="modal-texto">
+                        Descripción de la imagen...
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="boton-cerrar" onclick="cerrarModal()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="project-repository" class="section section-light-bg">
+        <div class="container text-center">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <i class="fab fa-github"></i> Ver Repositorio en GitHub
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Footer / Contacto (conservado del original) -->
+    <footer id="contacto" class="section">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:andreshueraman.st@gmail.com">andreshueraman.st@gmail.com</a>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+56956071607">+56 9 56071607</a>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Temuco, Chile</p>
+                </div>
+            </div>
+
+            <div class="redes-sociales">
+                <a href="https://www.linkedin.com/in/sergio-andr%C3%A9s-hueram%C3%A1n-tripailaf-6896371aa/"
+                    target="_blank" aria-label="Ir a linkedin" class="red-social">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="https://github.com/SAHT-97" target="_blank" aria-label="Ir a github" class="red-social">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <div class="copyright">
+                <p>2025 Sergio Hueramán</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <script>
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Menú móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Header sticky al hacer scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // Tooltips para línea de tiempo
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        timelineItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'timeline-tooltip';
+                tooltip.textContent = item.getAttribute('data-tooltip');
+                item.appendChild(tooltip);
+            });
+
+            item.addEventListener('mouseleave', () => {
+                const tooltip = item.querySelector('.timeline-tooltip');
+                if (tooltip) {
+                    item.removeChild(tooltip);
+                }
+            });
+        });
+
+        // Obtener el modal
+        const modal = document.getElementById("miModal");
+
+        // Función para abrir el modal
+        function abrirModal(titulo, imagenSrc, texto) {
+            document.getElementById("modal-titulo").textContent = titulo;
+            document.getElementById("modal-imagen").src = imagenSrc;
+            document.getElementById("modal-texto").textContent = texto;
+
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Evitar scroll en el fondo
+        }
+
+        // Función para cerrar el modal
+        function cerrarModal() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Restaurar scroll
+        }
+
+        // Cerrar el modal al hacer clic fuera del contenido
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                cerrarModal();
+            }
+        }
+
+        // Cerrar modal con la tecla ESC
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                cerrarModal();
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="95" fill="#2B2B2B"/>
+  <text x="50%" y="35%" text-anchor="middle" font-size="20" font-family="Arial, sans-serif" fill="#FFFFFF">Portafolio</text>
+  <text x="50%" y="60%" text-anchor="middle" font-size="50" font-family="Arial, sans-serif" font-weight="bold">
+    <tspan fill="#2E8B57">SA</tspan><tspan fill="#FFFFFF">HT</tspan>
+  </text>
+</svg>

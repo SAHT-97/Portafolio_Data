@@ -1,348 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Description" content="Template portafolio desarrollador UI/UX " />
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/primeflex@^3/primeflex.css">
-    <link rel="stylesheet" href="https://unpkg.com/primeflex/themes/saga-blue.css">
-    <script src="https://kit.fontawesome.com/b3f17f1dac.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="./assets/logo_web.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergio Andrés Hueramán T. | Contador Auditor y Analista de Datos</title>
+    <link rel="icon" href="./assets/ICONS/favicon_saht.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuente Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-
 <body>
-    <!-- HEADER -->
-    <header class="flex w-full fixed top-0 z-1">
-        <nav class="flex justify-content-between w-full navbar">
-            <span class="logo cursor-pointer" onclick="scrollToSection('home')">
-                <img src="./assets/logo-monse.png" alt="Logo portafolio" width="50" height="50">
-            </span>
-            <input type="checkbox" aria-label="Checkbox para mostrar y quitar hamburger menu"
-                class="checkbox xl:hidden">
-            <div class="hamburger__lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <div class="header__info flex align-items-center gap-3">
-                <ul class="flex flex-column xl:flex-row list-none">
-                    <li onclick="scrollToSection('about')">Sobre mí</li>
-                    <li onclick="scrollToSection('services')">Servicios</li>
-                    <li onclick="scrollToSection('portfolio')">Portafolio</li>
-                    <li onclick="scrollToSection('contact')">Contacto</li>
-                </ul>
-                <div class="hireMe__button pt-4">
-                    <a href="https://wa.me/56956071607" target="_blank" aria-label="Enviar mensaje por WhatsApp"
-                        class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm flex items-center gap-2">
-                        <i class="fab fa-whatsapp"></i> Háblame
-                    </a>
-                </div>
-                
-            </div>
-        </nav>
-    </header>
-    <!--HOME PAGE -->
-    <div class="container">
-        <section id="home"
-            class="home__page flex align-items-center justify-content-center xl\:justify-content-between grid grid-nogutter gap-4">
-            <div class="left__content col-12 xl:col-6">
-                <div class="message__bubble triangle mb-4 md:mb-2">
-                    <div class="message__text p-2 sm:p-3 text-center">
-                        <p>Hola, Yo soy</p>
-                    </div>
-                </div>
-                <h1 class="text-3xl sm:text-5xl md:text-7xl">Sergio Hueramán T.</h1>
-                <p class="text-gray-500">
-                    Contador Auditor con Habilidades en Análisis de Datos
-                </p>
-                <div class="home__buttons flex align-items-center gap-2 mt-6">
-                    <a href="./assets/Cv SAHT 2025.pdf" aria-label="Descargar curriculum"
-                        class="cursor-pointer border-round-lg no-underline" download>Descargar CV</a>
-                    <button onclick="scrollToSection('portfolio')" aria-label="Deslizar a sección portafolio para mostrar mis trabajos"
-                        class="cursor-pointer border-round-lg">Mi trabajo</button>
-                </div>
-            </div>
-            <div class="right__content col-9 sm:col-6 xl:col-5">
-                <img src="./assets/foto_perfil.png" class="Foto_perfil" width="70" height="7 0">
-            </div>
-        </section>
-        <!--ABOUT ME-->
-        <section id="about" class="about__me w-full min-h-screen flex align-items-center">
-            <div class="aboutMe__content min-h-full flex flex-column md:flex-row pt-8 md:pt-0">
-                <div class="aboutMe__info col-12 md:col-6 md:pr-6 pt-0">
-                    <h1 class="text-3xl md:text-5xl">Sobre mí</h1>
-                    <p>"Soy un profesional en formación con una sólida base en contabilidad, enfocado en ganar experiencia práctica para completar mis estudios. Cuento con una certificación en Power BI, lo que me ha permitido desarrollar habilidades para analizar datos, crear dashboards interactivos y contar historias con datos. Tengo un dominio avanzado de Excel, así como experiencia en limpieza de bases de datos y consultas en SQL. </p>
-                    <p class="text-gray-500"> Me apasionan las nuevas tecnologías y el aprendizaje continuo, manteniéndome siempre actualizado en mi campo. En mi tiempo libre, disfruto del cicloturismo, una actividad que refleja mi espíritu activo y aventurero."</p>
-                    <div class="hireMe__button pt-4">
-                        <a href="mailTo:andreshueraman.st@gmail.com" aria-label="Enviar mensaje al correo"
-                            class="cursor-pointer no-underline border-round-lg">Contratame</a>
-                    </div>
-
-                </div>
-                <div class="image col p-0 mt-6 md:mt-0">
-                    <img src="./assets/aboutme3.jpg" alt="Foto relacionado a acerca de mí" width="100" height="100">
-                </div>
-            </div>
-        </section>
-    </div>
-    <!--FREE LANCER SECTION -->
-    <section class="freelancer mb-4 mt-4 min-w-full flex flex-column justify-content-center align-items-center">
-        <p class="text-sm">¿Tienes un proyecto en mente?</p>
-        <h1 class="text-center">Estoy disponible como freelancer</h1>
-        <div class="hireMe__button pt-4">
-            <a href="mailTo:andreshueraman.st@gmail.com" aria-label="Enviar mensaje al correo"
-                class="cursor-pointer no-underline border-round-lg flex items-center gap-2">
-                <i class="fas fa-envelope"></i> Escríbeme
-            </a>
-        </div>
-    </section>
-    
-    <!--SERVICES -->
-    <div class="container">
-        <section id="services" class="services min-h-full w-full pb-7">
-            <div class="services__title flex flex-column gap-3 text-center">
-                <h1 class="text-3xl md:text-5xl">Tecnologias y Plataformas de los Servicios</h1>
-                <p class="text-gray-400 text-sm md:text-base">
-                    Creación de informes y dashboards dinámicos, plantillas personalizadas, gestión de bases de datos y asesoria contable.
-                </p>
-            </div>
-            <div class="services__card w-full grid grid-nogutter mt-7 gap-5">
-                <div class="card flex align-items-center col-12 sm:col-6 lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center">
-                        <img src="assets/powerbi.png" alt="Ver Certificaión">
-                    </div>
-                    <div class="service__name">
-                        <p>Power BI</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <img src="assets/excel.png" alt="Ver Certificación">
-                    </div>
-                    <div class="service__name">
-                        <p>Excel</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col-6 md:col-3 lg:col gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <img src="assets/sql.png" alt="Ver Certificación">
-                    </div>
-                    <div class="service__name">
-                        <p>SQL</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col md:col lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <img src="assets/sheets.png" alt="">
-                    </div>
-                    <div class="service__name">
-                        <p>Google sheets</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col-6 md:col-4 lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <img src="assets/python.png" alt="">
-                    </div>
-                    <div class="service__name">
-                        <p>Python</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col md:col-4 lg:col gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <img src="assets/sii.png" width="40" height="40" alt="">
-                    </div>
-                    <div class="service__name">
-                        <p>Servicio de Impuestos Internos</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--PORTFOLIO -->
-        <section id="portfolio" class="portfolio min-h-full w-full pb-8 pt-8">
-            <div class="portfolio__title flex flex-column gap-3 text-center">
-                <h1 class="text-3xl md:text-5xl">Mi trabajo</h1>
-                <p class="text-gray-400 text-sm md:text-base">
-                    Contabilidad y Análisis de Datos
-                </p>
-            </div>
-            <div class="portfolio__gallery">
-                <div class="gallery__categories mb-5 mt-5">
-                    <ul class="flex list-none flex-wrap justify-content-center gap-3">
-                        <li class="filter-item active" data-filter="all">Todos</li>
-                        <li class="filter-item " data-filter="dash">DashBoard</li>
-                        <li class="filter-item " data-filter="plantillas">Plantillas Personalisadas</li>
-                        <li class="filter-item " data-filter="conta">Asesoría Contable</li>
-                    </ul>
-                </div>
-                <div class="proyect__gallery flex justify-content-center align-items-center flex-wrap gap-3">
-                    <div class="proyect__gallery flex justify-content-center align-items-center flex-wrap gap-3">
-                        <!-- Primera tarjeta -->
-                        <a href="./Pryectos/d1.html" class="project__link">
-                            <div class="project__card dash">
-                                <img src="./assets/c-d1.gif" alt="">
-                                <div class="overlay"></div>
-                                <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                    <h2>Finanzas Personales</h2>
-                                    <p>Ver Proyecto</p>
-                                    <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                                </div>
-                            </div>
-                        </a>
-                        <!-----------SEGUNDA TARJETA-->
-                        <a href="./Pryectos/d2.html" class="project__link">
-                            <div class="project__card dash">
-                                <img src="./assets/c-d2.gif" alt="">
-                                <div class="overlay"></div>
-                                <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                    <h2>Indicadores de Población Mundial</h2>
-                                    <p>Ver Proyecto</p>
-                                    <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                                </div>
-                            </div>
-                        </a>
-                            <!---------TERCERA TARJETA-->
-                        <a href="./Pryectos/d3.html" class="project__link">
-                            <div class="project__card dash">
-                                <img src="./assets/c-d3.png" alt="">
-                                <div class="overlay"></div>
-                                <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                    <h2>Análisis RRHH</h2>
-                                    <p>Ver Proyecto</p>
-                                    <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="./Pryectos/pp0.html" class="project__link">
-                            <div class="project__card plantillas">
-                                <img src="./assets/c_pp0.gif" alt="">
-                                <div class="overlay"></div>
-                                <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                    <h2>Sistema de contabilidad, Pyme</h2>
-                                    <p>Ver Planilla</p>
-                                    <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                                </div>
-                            </div>
-                        </a>
-                                                <!---------------PLANILLAS-->
-                        <a href="./Pryectos/pp1.html" class="project__link">
-                            <div class="project__card plantillas">
-                                <img src="./assets/pp1.gif" alt="">
-                                <div class="overlay"></div>
-                                <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                    <h2>Entrega de EPP</h2>
-                                    <p>Ver Planilla</p>
-                                    <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="./Pryectos/pp2.html" class="project__link">
-                            <div class="project__card plantillas">
-                                <img src="./assets/pp2.gif" alt="">
-                                <div class="overlay"></div>
-                                <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                    <h2>Estados Financieros</h2>
-                                    <p>Ver Planilla</p>
-                                    <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                                </div>
-                            </div>
-                        </a>
-                        <!---------ASESORIA-->
-
-                        <a href="./Pryectos/a1.html" class="project__link">
-                            <div class="project__card conta">
-                                <img src="./assets/c-a1.jpg" alt="">
-                                <div class="overlay"></div>
-                                <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                    <h2>Asesoría Contable</h2>
-                                    <p>Ver los Servicios</p>
-                                    <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                                </div>
-                            </div>
-                        </a>
-
-
-
-            </div>
-
-
-        </section>
-        <!--FOOTER -->
-        <footer id="contact" class="min-h-full w-full flex grid col-12 justify-content-center pb-8 pt-8 lg:text-center">
-            <div class="social__media col-12 md:col-4 flex flex-column justify-content-between">
-                <h3>Redes sociales</h3>
-        
-                <p>Desarrollo lo que necesitas, con un enfoque en la presición y usabilidad.</p>
-                <div class="social__mediaIcons mt-5 flex lg:justify-content-center gap-3">
-                    <a href="https://github.com/SAHT-97" target="_blank" aria-label="Ir a facebook">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://www.instagram.com/sergiohueraman/" target="_blank" aria-label="Ir a instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/sergio-andr%C3%A9s-hueram%C3%A1n-tripailaf-6896371aa/" target="_blank" aria-label="Ir a linkedin">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="contact col-12 sm:col-6 sm:pt-0 md:pt-2 md:col-4 flex flex-column justify-content-between md:align-items-center">
-                <h3>Contacto</h3>
-                <div class="phone__number flex align-items-center gap-2">
-                    <i class="fa-solid fa-phone"></i>
-                    <p>+569 56071607</p>
-                </div>
-                <div class="email flex align-items-center gap-2">
-                    <i class="fa-solid fa-envelope"></i>
-                    <p>andreshueraman.st@gmail.com</p>
-                </div>
-                <a href="mailTo:andreshueraman.st@gmail.com"
-                    class="cursor-pointer text-center col-4 sm:col-6 xl:col-4 mt-3 no-underline border-round-lg">
-                    <span>
-                        <i class="fa-solid fa-message"></i>
-                    </span>Escríbeme
+    <!-- Header con navegación -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="./assets/ICONS/portafolio_saht.svg" alt="Logo">
                 </a>
             </div>
-            <div class="my__services col-12 sm:col-6 sm:p-0 md:col-4 md:pt-2 md:align-items-center flex flex-column justify-content-between">
-                <h3>Mis Servicios</h3>
-                <p>DashBoard</p>
-                <p>Planillas Personalisadas</p>
-                <p>Informes</p>
-                <P>Asesoría Contable</P>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/56956071607" target="_blank" aria-label="Enviar mensaje por WhatsApp" class="btn-contacto">Contacto</a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
             </div>
-        </footer>
-    </div>
+        </div>
+    </header>
 
+    <!-- Sección Home -->
+    <section id="home" class="section">
+        <div class="container home-content">
+            <div class="home-text">
+                <div class="badge">Hola Soy</div>
+                <h1>Sergio Andrés Hueramán T.</h1>
+                <p class="subtitle">Contador Auditor y Analista de Datos</p>
+                <div class="buttons">
+                    <a href="#" class="btn btn-primary">Descarga CV</a>
+                    <a href="#proyectos" class="btn btn-secondary">Mi trabajo</a>
+                </div>
+            </div>
+            <div class="home-image">
+                <img src="./assets/foto_perfil.png" alt="Sergio Hueramán">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="section">
+        <div class="container">
+            <h2>Sobre Mí</h2>
+            <div class="sobre-mi-content">
+                <div class="sobre-mi-text">
+                    <p>
+                        Soy un profesional en formación con una sólida base en contabilidad, enfocado en ganar experiencia práctica para completar mis estudios. Cuento con una certificación en Power BI, lo que me ha permitido desarrollar habilidades para analizar datos, crear dashboards interactivos y contar historias con datos. Tengo un dominio avanzado de Excel, así como experiencia en limpieza de bases de datos y consultas en SQL.
+                    </p>
+                    <p>
+                        Me apasionan las nuevas tecnologías y el aprendizaje continuo, manteniéndome siempre actualizado en mi campo. En mi tiempo libre, disfruto del cicloturismo, una actividad que refleja mi espíritu activo y aventurero.
+                    </p>
+                    <a href="#contacto" class="btn btn-primary">Contáctame</a>
+                </div>
+                <div class="sobre-mi-image">
+                    <img src="./assets/conta&da.jpg" alt="Sergio Hueramán trabajando">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Freelancer -->
+    <section id="freelancer" class="section">
+        <div class="container">
+            <p class="freelancer-intro">¿Tienes un proyecto en mente?</p>
+            <h3>Estoy disponible como freelancer</h3>
+            <a href="#contacto" class="btn btn-light">Contáctame</a>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="section">
+        <div class="container">
+            <h2>Tecnologías y Plataformas de los Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <img src="./assets/ICONS/Excel.svg" alt="Excel">
+                    </div>
+                    <h3>Excel Avanzado</h3>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <img src="./assets/ICONS/Power Bi.svg" alt="Power BI">
+                    </div>
+                    <h3>Power BI</h3>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <img src="./assets/ICONS/SQL.svg" alt="SQL">
+                    </div>
+                    <h3>SQL</h3>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <img src="./assets/ICONS/Python.svg" alt="Python">
+                    </div>
+                    <h3>Python</h3>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <img src="./assets/ICONS/Sheets.svg" alt="Sheets">
+                    </div>
+                    <h3>Google Sheets</h3>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <img src="./assets/ICONS/Pandas.svg" alt="Pandas">
+                    </div>
+                    <h3>Pandas</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="section">
+        <div class="container">
+            <h2>Mi trabajo</h2>
+            <p class="section-subtitle">Contabilidad y Análisis de Datos</p>
+            
+            
+            <div class="proyectos-grid">
+                <!-- Proyecto 1 -->
+                <div class="proyecto-card">
+                    <a href="./Pryectos/araucarias.html" style="text-decoration: none; color: inherit;">
+                        <div class="proyecto-img">
+                            <img src="./assets/Las Araucarias/PLA_FE.png" alt="Análisis financiero">
+                        </div>
+                        <div class="proyecto-content">
+                            <h3>Análisis Financiero Dashboard</h3>
+                            <p>Este proyecto presenta un sistema contable intuitivo diseñado para microempresas, utilizando AppSheet y Google Sheets.</p>
+                            <div class="tecnologias">
+                                <img src="./assets/ICONS/Sheets.svg" alt="Sheets">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            
+                <!-- Proyecto 2 -->
+                <div class="proyecto-card">
+                    <a href="proyecto2.html" style="text-decoration: none; color: inherit;">
+                        <div class="proyecto-img">
+                            <img src="./assets/Las Araucarias/OTRO_PROYECTO.png" alt="Otro Proyecto">
+                        </div>
+                        <div class="proyecto-content">
+                            <h3>Visualización en Power BI</h3>
+                            <p>Un dashboard desarrollado en Power BI que analiza datos históricos de ventas, con segmentación por producto y región.</p>
+                            <div class="tecnologias">
+                                <img src="./assets/ICONS/PowerBI.svg" alt="Power BI">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <!-- Footer / Contacto -->
+    <footer id="contacto" class="section">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:andreshueraman.st@gmail.com">andreshueraman.st@gmail.com</a>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+56956071607">+56 9 56071607</a>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Temuco, Chile</p>
+                </div>
+            </div>
+            
+            <div class="redes-sociales">
+                <a href="https://www.linkedin.com/in/sergio-andr%C3%A9s-hueram%C3%A1n-tripailaf-6896371aa/" target="_blank" aria-label="Ir a linkedin" class="red-social">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                
+                <a href="https://github.com/SAHT-97" target="_blank" aria-label="Ir a linkedin" class="red-social">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                
+                  
+
+            </div>
+            
+            <div class="copyright">
+                <p>°2025 Sergio Andrés Hueramán T.°</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para smooth scroll y menú móvil -->
+    <script>
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Menú móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Header sticky al hacer scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+    </script>
 </body>
-<script>
-    const filterContainer = document.querySelector(".gallery__categories");
-    const galleryItems = document.querySelectorAll(".project__card");
-
-    filterContainer.addEventListener("click", (event) => {
-        if (event.target.classList.contains("filter-item")) {
-            filterContainer.querySelector(".active").classList.remove("active");
-            event.target.classList.add("active")
-            const filterValue = event.target.getAttribute("data-filter")
-            galleryItems.forEach(item => {
-                if (item.classList.contains(filterValue) || filterValue === "all") {
-                    item.classList.remove("hide")
-                    item.classList.add("show")
-                } else {
-                    item.classList.remove("show")
-                    item.classList.add("hide")
-                }
-            })
-        }
-    })
-
-    function scrollToSection(sectionId){
-        document.getElementById(sectionId).scrollIntoView({behavior:"smooth"})
-    }
-</script>
-
 </html>

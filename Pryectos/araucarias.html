@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Financiero Dashboard | Sergio Hueramán</title>
+    <link rel="icon" href="../assets/ICONS/favicon_saht.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Fuente Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Prism.js para resaltado de código -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+
+<body>
+    <!-- Header con navegación (conservado del original) -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/ICONS/portafolio_saht.svg" alt="Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#proyectos">Proyectos</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/56956071607" target="_blank" aria-label="Enviar mensaje por WhatsApp"
+                class="btn-contacto"><i class="fab fa-whatsapp"> </i> Contacto</a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Portada del proyecto -->
+    <section id="proyecto-hero" class="section">
+        <div class="container">
+            <div class="badge">Proyecto de Contabilidad</div>
+            <h1>Sistema Contable Simplificado para Microempresa: "Las Araucarias"</h1>
+            <p class="hero-subtitle">Contabilidad Fácil y al Alcance: Tu Solución para Microempresas
+            </p>
+            <a href="mailto:andreshueraman.st@gmail.com" class="btn btn-primary">Contáctame para un proyecto similar</a>
+        </div>
+    </section>
+
+    <!-- Resumen ejecutivo en dos columnas -->
+    <section id="resumen" class="section">
+        <div class="container">
+            <div class="resumen-grid">
+                <div class="subtitulo-proyectos">
+                    <h2>Resumen del Proyecto</h2>
+                    <p>En un entorno donde las microempresas enfrentan retos para gestionar sus finanzas debido a
+                        recursos y conocimientos limitados, este proyecto desarrolla un sistema contable a medida para
+                        "Las Araucarias", una empresa familiar. Aprovechando AppSheet y Google Sheets, el sistema
+                        proporciona una interfaz sencilla e intuitiva para registrar operaciones diarias como ventas,
+                        compras y pagos. Su diseño prioriza la simplicidad y la accesibilidad, permitiendo a los
+                        usuarios controlar sus finanzas desde cualquier dispositivo sin necesidad de formación extensa
+                        ni software costoso. Al automatizar la sincronización de datos y ofrecer información financiera
+                        en tiempo real, esta solución empodera a los pequeños empresarios para tomar decisiones
+                        informadas y mantener el control financiero sin esfuerzo.</p>
+                    <div class="tecnologias-usadas">
+                        <span>Tecnologías:</span>
+                        <img src="../assets/ICONS/Sheets.svg" alt="Google Sheets">
+                    </div>
+                </div>
+                <div class="resumen-imagen">
+                    <video width="640" height="360" controls autoplay loop muted>
+                        <source src="../assets/Las Araucarias/V_LAS.mp4" type="video/mp4">
+                        Tu navegador no soporta videos MP4.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Línea de tiempo (metodología) -->
+    <section id="metodologia" class="section">
+        <div class="container">
+            <div class="subtitulo-proyectos">
+                <h2>Metodología Aplicada</h2>
+            <div class=" timeline">
+                    <div class="timeline-item"
+                        data-tooltip="Se identificaron los requerimientos específicos de gestión financiera de Las Araucarias para personalizar el sistema según sus necesidades.">
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-record-vinyl"></i>
+                        </div>
+                        <h3>Evaluación de Necesidades</h3>
+                    </div>
+                    <div class="timeline-item"
+                        data-tooltip="Se optó por AppSheet y Google Sheets por su bajo costo, facilidad de uso y capacidades de integración sin complicaciones.">
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </div>
+                        <h3>Selección de Tecnología</h3>
+                    </div>
+                    <div class="timeline-item"
+                        data-tooltip="Se desarrolló una interfaz intuitiva en AppSheet que se adapta a los diferentes tipos de transacciones, simplificando la entrada de datos para los usuarios.">
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-pen-fancy"></i>
+                        </div>
+                        <h3>Diseño del Sistema</h3>
+                    </div>
+                    <div class="timeline-item"
+                        data-tooltip="Se configuró Google Sheets para actualizar automáticamente los registros de transacciones, organizándolos en hojas específicas como Efectivo, Proveedores, Clientes, Detalles y Flujo de Efectivo">
+                        <div class="timeline-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Gestión de Datos</h3>
+                    </div>
+                    <div class="timeline-item"
+                        data-tooltip="Se realizaron pruebas de usabilidad con los usuarios objetivo para ajustar el sistema según sus comentarios, asegurando que fuera práctico y fácil de usar.">
+                        <div class="timeline-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Pruebas e Iteración</h3>
+                    </div>
+                    <div class="timeline-item"
+                    data-tooltip="Se desplegó el sistema y se brindó una capacitación básica para garantizar que los usuarios pudieran navegar y aprovecharlo con confianza.">
+                    <div class="timeline-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Implementación y Capacitación</h3>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!--------------DESCRIPCION-->
+    <section id="descripcion" class="section">
+        <div class="container">
+            <div class="subtitulo-proyectos">
+                <h2>Información Técnica</h2>
+                <p>El sistema está construido con AppSheet, una plataforma sin código para desarrollar aplicaciones personalizadas, e integrado con Google Sheets para la gestión y almacenamiento de datos. Esta combinación permite la sincronización en tiempo real y el acceso desde cualquier dispositivo con conexión a internet, eliminando la necesidad de software tradicional y reduciendo costos operativos.</p>
+                <div class="subtitulo-proyectos">
+                </div>
+
+    </section>
+
+    <!-- Insights destacados en grid -->
+    <section id="insights" class="section">
+        <div class="container">
+            <div class="subtitulo-proyectos">
+                <h2>Principales Insights</h2>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <div class="insight-icon">
+                            <i class="fas fa-arrow-trend-up"></i>
+                        </div>
+                        <h3>Diseñado para Microempresas</h3>
+                        <p>Creado específicamente para abordar los desafíos financieros de negocios familiares como "Las Araucarias".</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>Mayor Control Financiero</h3>
+                        <p>Proporciona visibilidad clara sobre el flujo de efectivo, deudas y créditos, mejorando la supervisión financiera.
+                        </p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Toma de Decisiones Mejorada</h3>
+                        <p>Registros detallados y proyecciones financieras apoyan decisiones estratégicas informadas.</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Accesibilidad</h3>
+                        <p>La compatibilidad multidispositivo permite gestionar las finanzas en cualquier momento y lugar.</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Registro Simplificado</h3>
+                        <p>Automatiza la organización de datos, reduciendo significativamente el esfuerzo manual en la contabilidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="project-gallery" class="section">
+        <div class="container">
+            <div class="subtitulo-proyectos">
+                <h2>Galería del Proyecto</h2>
+                <p>Vistas clave de las herramientas y análisis realizados.</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item"
+                    
+                        onclick="abrirModal('Base de Datos', '../assets/Las Araucarias/PLA_DB.png', 'La aplicación, desarrollada en AppSheet, facilita el registro de las operaciones diarias de la empresa, como ventas, compras o pagos. Según el tipo de operación, la interfaz muestra solo las opciones necesarias, simplificando la entrada de datos. Todos los registros se sincronizan automáticamente con una hoja de cálculo en Google Sheets, manteniendo la información actualizada y organizada')">
+                        <div class="badge">Ver detalle </div>
+                        <img src="../assets/Las Araucarias/PLA_DB.png" alt="Base de datos">
+                        <p class="caption">Base de datos</p>
+                        
+                    </div>
+                    <div class="gallery-item"
+                        onclick="abrirModal('Control Preciso del Efectivo Disponible', '../assets/Las Araucarias/PLA_E.png', 'La hoja de Efectivo en Google Sheets recopila las transacciones de efectivo y transferencias bancarias, separando ingresos y egresos. Esto proporciona un saldo disponible actualizado en tiempo real, ofreciendo a la empresa una visión clara de su liquidez en todo momento.')">
+                        <div class="badge">Ver detalle </div>
+                        <img src="../assets/Las Araucarias/PLA_E.png"
+                            alt="las araucarias">
+                        <p class="caption">Control Preciso del Efectivo Disponible</p>
+                        
+                    </div>
+                    <div class="gallery-item"
+                        onclick="abrirModal('Seguimiento Detallado de Proveedores', '../assets/Las Araucarias/PLA_P.png', 'La hoja de Proveedores organiza los pagos, compras a crédito y pedidos a proveedores. Divide la información en Pagos (lo ya pagado) y Deuda (lo pendiente por pagar). Los pedidos se registran para seguimiento, aunque no afectan el saldo, permitiendo conocer exactamente cuánto se debe a cada proveedor...')">
+                        <div class="badge">Ver detalle </div>
+                        <img src="../assets/Las Araucarias/PLA_P.png"
+                            alt="Las Araucarias">
+                        <p class="caption">Seguimiento Detallado de Proveedores</p>
+                    </div>
+                    <div class="gallery-item"
+                        onclick="abrirModal('Monitoreo de Cuentas por Cobrar a Clientes', '../assets/Las Araucarias/PLA_C.png', 'La hoja de Clientes gestiona las ventas a crédito y los pagos recibidos, clasificándolos en Ingresos (lo pagado por los clientes) y Crédito (lo que aún deben). Esto entrega un saldo claro de las cuentas por cobrar, ayudando a la empresa a rastrear sus ingresos pendientes.')">
+                        <div class="badge">Ver detalle </div>
+                        <img src="../assets/Las Araucarias/PLA_C.png" alt="Las Araucarias">
+                        <p class="caption">Monitoreo de Cuentas por Cobrar a Clientes</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="miModal" class="modal">
+            <div class="modal-contenido">
+                <div class="modal-header">
+                    <h2 id="modal-titulo" class="modal-titulo">Título del Modal</h2>
+                    <button class="cerrar-modal" onclick="cerrarModal()">&times;</button>
+                </div>
+                <div class="modal-cuerpo">
+                    <div class="modal-imagen-container">
+                        <img id="modal-imagen" src="" alt="Imagen" class="modal-imagen">
+                    </div>
+                    <div id="modal-texto" class="modal-texto">
+                        Descripción de la imagen...
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="boton-cerrar" onclick="cerrarModal()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="project-repository" class="section section-light-bg">
+        <div class="container text-center">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <i class="fab fa-github"></i> Ver Repositorio en GitHub
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Footer / Contacto (conservado del original) -->
+    <footer id="contacto" class="section">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:andreshueraman.st@gmail.com">andreshueraman.st@gmail.com</a>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+56956071607">+56 9 56071607</a>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Temuco, Chile</p>
+                </div>
+            </div>
+
+            <div class="redes-sociales">
+                <a href="https://www.linkedin.com/in/sergio-andr%C3%A9s-hueram%C3%A1n-tripailaf-6896371aa/"
+                    target="_blank" aria-label="Ir a linkedin" class="red-social">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="https://github.com/SAHT-97" target="_blank" aria-label="Ir a github" class="red-social">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <div class="copyright">
+                <p>2025 Sergio Hueramán</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <script>
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Menú móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Header sticky al hacer scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // Tooltips para línea de tiempo
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        timelineItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'timeline-tooltip';
+                tooltip.textContent = item.getAttribute('data-tooltip');
+                item.appendChild(tooltip);
+            });
+
+            item.addEventListener('mouseleave', () => {
+                const tooltip = item.querySelector('.timeline-tooltip');
+                if (tooltip) {
+                    item.removeChild(tooltip);
+                }
+            });
+        });
+
+        // Obtener el modal
+        const modal = document.getElementById("miModal");
+
+        // Función para abrir el modal
+        function abrirModal(titulo, imagenSrc, texto) {
+            document.getElementById("modal-titulo").textContent = titulo;
+            document.getElementById("modal-imagen").src = imagenSrc;
+            document.getElementById("modal-texto").textContent = texto;
+
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Evitar scroll en el fondo
+        }
+
+        // Función para cerrar el modal
+        function cerrarModal() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Restaurar scroll
+        }
+
+        // Cerrar el modal al hacer clic fuera del contenido
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                cerrarModal();
+            }
+        }
+
+        // Cerrar modal con la tecla ESC
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                cerrarModal();
+            }
+        });
+
+    </script>
+</body>
+
+</html>
