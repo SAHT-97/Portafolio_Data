@@ -622,10 +622,130 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Ajuste Responsivo para el Footer */
+/* RESPONSIVE DESIGN */
+
+/* Tablet y móviles grandes */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 5%;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-image img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-img {
+        flex: 1;
+        max-width: 100%;
+    }
+}
+
+/* Móviles */
 @media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        padding: 1rem 3%;
+    }
+
+    .navbar {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .navbar a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding: 2rem 5%;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-image img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    section {
+        padding: 3rem 5%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
     .contact-details {
         flex-direction: column;
         gap: 15px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-image img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .navbar a {
+        font-size: 0.8rem;
+        margin: 0 5px;
     }
 }
