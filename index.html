@@ -1,247 +1,190 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sergio Andrés Hueramán T. | Contador Auditor y Analista de Datos</title>
-    <link rel="icon" href="./assets/ICONS/favicon_saht.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Fuente Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Sergio Hueramán | Data Analyst & Contador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Header con navegación -->
-    <header id="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#home">
-                    <img src="./assets/ICONS/portafolio_saht.svg" alt="Logo">
-                </a>
-            </div>
-            <nav>
-                <ul class="menu">
-                    <li><a href="#sobre-mi">Sobre mí</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-            <a href="https://wa.me/56956071607" target="_blank" aria-label="Enviar mensaje por WhatsApp" class="btn-contacto">Contacto</a>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
+
+    <header class="header">
+        <div class="logo">SAHT</div>
+        <nav class="navbar">
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#servicios">Stack Tech</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <a href="https://wa.me/56956071607" target="_blank" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Hablemos
+        </a>
     </header>
 
-    <!-- Sección Home -->
-    <section id="home" class="section">
-        <div class="container home-content">
-            <div class="home-text">
-                <div class="badge">Hola Soy</div>
-                <h1>Sergio Andrés Hueramán T.</h1>
-                <p class="subtitle">Contador Auditor y Analista de Datos</p>
-                <div class="buttons">
-                    <a href="#" class="btn btn-primary">Descarga CV</a>
-                    <a href="#proyectos" class="btn btn-secondary">Mi trabajo</a>
-                </div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">👋 Hola, soy</span>
+            <h1>Sergio Andrés Hueramán T.</h1>
+            <p class="hero-subtitle">Contador & Data Analyst</p>
+            <p class="hero-description">Especialista en Análisis de Datos | De la extracción y limpieza de datos a la
+                visualización y el storytelling para Business Intelligence.</p>
+
+            <div class="hero-buttons">
+                <a href="./assets/cv-sergio-hueraman.pdf" download class="btn btn-primary">
+                    <i class="fas fa-download"></i> Descargar CV
+                </a>
+                <a href="#proyectos" class="btn btn-outline">Ver mi trabajo</a>
             </div>
-            <div class="home-image">
-                <img src="./assets/foto_perfil.png" alt="Sergio Hueramán">
+        </div>
+        <div class="hero-image">
+            <img src="./assets/foto_perfil.png" alt="Sergio Hueramán">
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="about">
+        <div class="about-container">
+            <div class="about-img">
+                <img src="./assets/fondo_ia.jpg" alt="Sobre Sergio">
+            </div>
+            <div class="about-text">
+                <h2>Perfil Profesional</h2>
+                <p style="text-indent: 2em; margin-bottom: 1.5em;">Analista de datos especializado en
+                    <strong>transformar
+                        información compleja en decisiones estratégicas</strong>. Combino una base formativa en
+                    Contabilidad con el dominio técnico de <strong>Power BI, SQL y Excel</strong> para diseñar
+                    dashboards y reportes que interpretan el rendimiento del negocio.
+                </p>
+
+                <p style="text-indent: 2em; margin-bottom: 1.5em;">Mi objetivo es claro: hacer que los datos sean
+                    <strong>accesibles, claros y útiles</strong> para todos los equipos, facilitando una toma de
+                    decisiones informada y ágil.
+                </p>
+
+                <a href="#contacto" class="btn btn-text">Vamos a conectar <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Sección Sobre Mí -->
-    <section id="sobre-mi" class="section">
-        <div class="container">
-            <h2>Sobre Mí</h2>
-            <div class="sobre-mi-content">
-                <div class="sobre-mi-text">
-                    <p>
-                        Soy un profesional en formación con una sólida base en contabilidad, enfocado en ganar experiencia práctica para completar mis estudios. Cuento con una certificación en Power BI, lo que me ha permitido desarrollar habilidades para analizar datos, crear dashboards interactivos y contar historias con datos. Tengo un dominio avanzado de Excel, así como experiencia en limpieza de bases de datos y consultas en SQL.
-                    </p>
-                    <p>
-                        Me apasionan las nuevas tecnologías y el aprendizaje continuo, manteniéndome siempre actualizado en mi campo. En mi tiempo libre, disfruto del cicloturismo, una actividad que refleja mi espíritu activo y aventurero.
-                    </p>
-                    <a href="#contacto" class="btn btn-primary">Contáctame</a>
-                </div>
-                <div class="sobre-mi-image">
-                    <img src="./assets/conta&da.jpg" alt="Sergio Hueramán trabajando">
-                </div>
-            </div>
+    <section class="freelancer-banner">
+        <p class="freelancer-intro">¿Necesitas optimizar tus datos?</p>
+        <h3>Estoy disponible para proyectos Freelance</h3>
+        <a href="#contacto" class="btn btn-light">Cotizar Proyecto</a>
+    </section>
+
+    <section id="servicios" class="services">
+        <h2>Stack Tecnológico</h2>
+        <div class="cards-grid">
+
+            <a href="./Tech/tech-excel.html" class="tech-card"> <i class="fas fa-file-excel"></i>
+                <h3>Excel Avanzado</h3>
+            </a>
+
+            <a href="./Tech/tech-powerbi.html" class="tech-card">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Power BI</h3>
+            </a>
+
+            <a href="./Tech/tech-sql.html" class="tech-card">
+                <i class="fas fa-database"></i>
+                <h3>SQL</h3>
+            </a>
+
+            <a href="./Tech/tech-python.html" class="tech-card">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
+            </a>
+
+            <a href="./Tech/tech-sheets.html" class="tech-card">
+                <i class="fas fa-table"></i>
+                <h3>Google Sheets</h3>
+            </a>
+
+
         </div>
     </section>
 
-    <!-- Sección Freelancer -->
-    <section id="freelancer" class="section">
-        <div class="container">
-            <p class="freelancer-intro">¿Tienes un proyecto en mente?</p>
-            <h3>Estoy disponible como freelancer</h3>
-            <a href="#contacto" class="btn btn-light">Contáctame</a>
+    <section id="proyectos" class="projects">
+        <h2>Portafolio de Soluciones</h2>
+        <p class="section-desc">Casos de estudio donde aplico Contabilidad y Data Analytics.</p>
+
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="card-img">
+                    <img src="https://via.placeholder.com/300x200" alt="Proyecto 1">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">Finanzas</span>
+                    <h3>Sistema de Gestión "Las Araucarias"</h3>
+                    <p>Optimización de flujo de caja y control de inventario para microempresa familiar.</p>
+                    <div class="tech-icons-mini">
+                        <i class="fas fa-database" title="AppSheet"></i>
+                        <i class="fas fa-table" title="Google Sheets"></i>
+                    </div>
+                    <a href="proyecto-modelo.html" class="btn-link">Ver Caso de Estudio</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-img">
+                    <img src="https://via.placeholder.com/300x200" alt="Proyecto 2">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">Dashboard</span>
+                    <h3>Análisis de Ventas Retail</h3>
+                    <p>Dashboard interactivo en Power BI para visualizar KPIs de ventas mensuales.</p>
+                    <div class="tech-icons-mini">
+                        <i class="fas fa-chart-bar"></i>
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <a href="#" class="btn-link">Ver Caso de Estudio</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-img">
+                    <img src="https://via.placeholder.com/300x200" alt="Proyecto 3">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">Python & SQL</span>
+                    <h3>Limpieza de Datos Masivos</h3>
+                    <p>Script de Python para automatizar la limpieza de reportes contables.</p>
+                    <div class="tech-icons-mini">
+                        <i class="fab fa-python"></i>
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <a href="#" class="btn-link">Ver Caso de Estudio</a>
+                </div>
+            </article>
         </div>
     </section>
 
-    <!-- Sección Servicios -->
-    <section id="servicios" class="section">
-        <div class="container">
-            <h2>Tecnologías y Plataformas de los Servicios</h2>
-            <div class="servicios-grid">
-                <div class="servicio-card">
-                    <div class="servicio-icon">
-                        <img src="./assets/ICONS/Excel.svg" alt="Excel">
-                    </div>
-                    <h3>Excel Avanzado</h3>
-                </div>
-                <div class="servicio-card">
-                    <div class="servicio-icon">
-                        <img src="./assets/ICONS/Power Bi.svg" alt="Power BI">
-                    </div>
-                    <h3>Power BI</h3>
-                </div>
-                <div class="servicio-card">
-                    <div class="servicio-icon">
-                        <img src="./assets/ICONS/SQL.svg" alt="SQL">
-                    </div>
-                    <h3>SQL</h3>
-                </div>
-                <div class="servicio-card">
-                    <div class="servicio-icon">
-                        <img src="./assets/ICONS/Python.svg" alt="Python">
-                    </div>
-                    <h3>Python</h3>
-                </div>
-                <div class="servicio-card">
-                    <div class="servicio-icon">
-                        <img src="./assets/ICONS/Sheets.svg" alt="Sheets">
-                    </div>
-                    <h3>Google Sheets</h3>
-                </div>
-                <div class="servicio-card">
-                    <div class="servicio-icon">
-                        <img src="./assets/ICONS/Pandas.svg" alt="Pandas">
-                    </div>
-                    <h3>Pandas</h3>
-                </div>
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-envelope"></i> andrehueraman@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +569 56071607</p>
+                <p><i class="fas fa-map-marker-alt"></i> Temuco, Chile</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Sección Proyectos -->
-    <section id="proyectos" class="section">
-        <div class="container">
-            <h2>Mi trabajo</h2>
-            <p class="section-subtitle">Contabilidad y Análisis de Datos</p>
-            
-            
-            <div class="proyectos-grid">
-                <!-- Proyecto 1 -->
-                <div class="proyecto-card">
-                    <a href="./Pryectos/araucarias.html" style="text-decoration: none; color: inherit;">
-                        <div class="proyecto-img">
-                            <img src="./assets/Las Araucarias/PLA_FE.png" alt="Análisis financiero">
-                        </div>
-                        <div class="proyecto-content">
-                            <h3>Análisis Financiero Dashboard</h3>
-                            <p>Este proyecto presenta un sistema contable intuitivo diseñado para microempresas, utilizando AppSheet y Google Sheets.</p>
-                            <div class="tecnologias">
-                                <img src="./assets/ICONS/Sheets.svg" alt="Sheets">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            
-                <!-- Proyecto 2 -->
-                <div class="proyecto-card">
-                    <a href="proyecto2.html" style="text-decoration: none; color: inherit;">
-                        <div class="proyecto-img">
-                            <img src="./assets/Las Araucarias/OTRO_PROYECTO.png" alt="Otro Proyecto">
-                        </div>
-                        <div class="proyecto-content">
-                            <h3>Visualización en Power BI</h3>
-                            <p>Un dashboard desarrollado en Power BI que analiza datos históricos de ventas, con segmentación por producto y región.</p>
-                            <div class="tecnologias">
-                                <img src="./assets/ICONS/PowerBI.svg" alt="Power BI">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-    </section>
-
-    <!-- Footer / Contacto -->
-    <footer id="contacto" class="section">
-        <div class="container">
-            <h2>Contacto</h2>
-            <div class="contacto-info">
-                <div class="contacto-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:andreshueraman.st@gmail.com">andreshueraman.st@gmail.com</a>
-                </div>
-                <div class="contacto-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+56956071607">+56 9 56071607</a>
-                </div>
-                <div class="contacto-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Temuco, Chile</p>
-                </div>
-            </div>
-            
-            <div class="redes-sociales">
-                <a href="https://www.linkedin.com/in/sergio-andr%C3%A9s-hueram%C3%A1n-tripailaf-6896371aa/" target="_blank" aria-label="Ir a linkedin" class="red-social">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sergio-andr%C3%A9s-hueram%C3%A1n-tripailaf-6896371aa/"
+                    target="_blank" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                
-                <a href="https://github.com/SAHT-97" target="_blank" aria-label="Ir a linkedin" class="red-social">
+                <a href="https://github.com/SAHT-97" target="_blank" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-
-                
-                  
-
             </div>
-            
-            <div class="copyright">
-                <p>°2025 Sergio Andrés Hueramán T.°</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sergio Andrés Hueramán T. | Desarrollado con pasión.</p>
         </div>
     </footer>
 
-    <!-- Script para smooth scroll y menú móvil -->
-    <script>
-        // Smooth scroll para enlaces internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Menú móvil
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
-        
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-
-        // Header sticky al hacer scroll
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('sticky');
-            } else {
-                header.classList.remove('sticky');
-            }
-        });
-    </script>
 </body>
+
 </html>
