@@ -5,10 +5,10 @@ import io
 import re
 
 # --- CONFIGURACIÓN DE LA PÁGINA ---
-st.set_page_config(page_title="Extractor F29 - Final", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Extractor F-29", page_icon="📊", layout="wide")
 
-st.title("Centralización F-29")
-st.markdown("Sube tus archivos PDF.")
+st.title("Contabilización Formulario F-29 del SII")
+st.markdown("Sube tus archivos PDF. 🆙")
 
 # --- UTILIDADES ---
 
@@ -41,22 +41,37 @@ def obtener_nombre_periodo(texto_periodo):
     except:
         return "Periodo Desconocido"
 
-# --- LÓGICA DE EXTRACCIÓN HÍBRIDA ---
+# --- LÓGICA DE EXTRACCIÓN MEJORADA ---
+
+def match_codigo(texto_pdf, codigo_buscado):
+    """
+    Compara si el texto del PDF coincide con el código buscado,
+    ignorando ceros a la izquierda. 
+    Ej: texto_pdf="049" coincide con codigo_buscado=49
+    """
+    try:
+        # Convertir ambos a entero para comparar numéricamente
+        # Esto hace que "049" == 49 sea True
+        if int(texto_pdf) == int(codigo_buscado):
+            return True
+    except:
+        pass
+    return False
 
 def extraer_valor_flexible(pagina, codigo_buscado, estrategia="columna"):
     """
-    Busca valores usando dos estrategias:
-    1. 'columna': Divide la página en dos. Ideal para sección media.
-    2. 'fila_completa': Escanea toda la línea a la derecha. Ideal para totales (91, 94, 795).
+    Busca valores usando dos estrategias (Columnas o Fila Completa).
+    Incluye corrección para códigos con ceros (049, 062).
     """
     words = pagina.extract_words()
     ancho_pagina = pagina.width
     mitad_pagina = ancho_pagina / 2
     
-    # 1. Ubicar el código
+    # 1. UBICAR EL CÓDIGO (CON CORRECCIÓN DE CEROS)
     codigo_obj = None
     for word in words:
-        if word['text'] == str(codigo_buscado):
+        # Usamos la función auxiliar para detectar "049" como "49"
+        if match_codigo(word['text'], codigo_buscado):
             codigo_obj = word
             break
             
@@ -67,10 +82,10 @@ def extraer_valor_flexible(pagina, codigo_buscado, estrategia="columna"):
     x_fin_codigo = codigo_obj['x1']
     esta_a_la_izquierda = codigo_obj['x0'] < mitad_pagina
     
-    # 2. Filtrar candidatos (Números en la misma línea)
+    # 2. FILTRAR CANDIDATOS (Números en la misma línea)
     candidatos = []
     
-    # Tolerancia vertical un poco más alta para los totales que a veces tienen cajas grandes
+    # Tolerancia vertical
     tolerancia = 6 if estrategia == "columna" else 8
     
     for word in words:
@@ -85,16 +100,16 @@ def extraer_valor_flexible(pagina, codigo_buscado, estrategia="columna"):
         if word['x0'] <= x_fin_codigo:
             continue
             
-        # --- AQUI ESTÁ LA MAGIA ---
+        # ESTRATEGIAS DE MUROS
         if estrategia == "columna":
-            # APLICAR MUROS: Si es columna, no cruzar la mitad de la página
+            # Si es columna, no cruzar la mitad de la página
             if esta_a_la_izquierda:
                 if word['x1'] > (mitad_pagina + 15): continue
             else:
                 if word['x0'] < (mitad_pagina - 15): continue
         
         elif estrategia == "fila_completa":
-            # SIN MUROS: Permitir buscar hasta el borde derecho de la hoja
+            # Permitir buscar hasta el borde derecho de la hoja
             pass
             
         candidatos.append(word)
@@ -102,13 +117,11 @@ def extraer_valor_flexible(pagina, codigo_buscado, estrategia="columna"):
     if not candidatos:
         return 0
 
-    # 3. Selección del Valor
+    # 3. SELECCIÓN DEL VALOR
     # Ordenamos de izquierda a derecha
     candidatos.sort(key=lambda w: w['x0'])
     
-    # Para la sección inferior (totales), el valor suele estar en una columna específica a la derecha.
-    # Pero a veces hay símbolos (+, -) al final. 
-    # Buscamos el último que sea un número válido o el primero válido desde la derecha.
+    # Buscamos desde el final hacia atrás el primer número válido
     for word in reversed(candidatos):
         texto = word['text']
         val = limpiar_numero(texto)
@@ -118,12 +131,11 @@ def extraer_valor_flexible(pagina, codigo_buscado, estrategia="columna"):
     return 0
 
 def extraer_periodo(pagina):
-    """Busca el periodo (Cod 15) en la cabecera"""
-    # Usamos estrategia 'columna' porque el 15 está arriba a la derecha usualmente
-    val = extraer_valor_flexible(pagina, "15", estrategia="fila_completa") 
+    """Busca el periodo (Cod 15)"""
+    val = extraer_valor_flexible(pagina, 15, estrategia="fila_completa") 
     if val > 200000: return obtener_nombre_periodo(val)
     
-    # Fallback: Regex en texto
+    # Fallback Regex
     try:
         texto = pagina.crop((0, 0, pagina.width, 250)).extract_text()
         match = re.search(r'\b(20[2-3]\d)(0[1-9]|1[0-2])\b', texto)
@@ -133,9 +145,13 @@ def extraer_periodo(pagina):
     return "Sin Periodo"
 
 def procesar_pdfs(archivos):
-    # Definición de estrategias por código
-    codigos_columna = [538, 537, 62, 49, 48, 151, 155, 598]
-    codigos_totales = [91, 92, 93, 94, 795] # Agregado 795
+    # --- LISTAS DE CÓDIGOS ACTUALIZADAS ---
+    # Se reemplazó 598 por 755
+    # Se mantienen 49 y 62 (el script ahora los encuentra aunque digan 049/062)
+    codigos_columna = [538, 537, 62, 49, 48, 151, 155, 755] 
+    
+    # Se agregó 795 en la versión anterior
+    codigos_totales = [91, 92, 93, 94, 795] 
     
     datos = []
     progreso = st.progress(0)
@@ -171,7 +187,7 @@ def procesar_pdfs(archivos):
     
     df = pd.DataFrame(datos)
     
-    # Rellenar y Ordenar
+    # Rellenar ceros
     all_codes = codigos_columna + codigos_totales
     for c in all_codes:
         if c not in df.columns: df[c] = 0
@@ -190,7 +206,7 @@ def df_to_excel(df1, df2):
 
 # --- INTERFAZ ---
 st.markdown("### 📁 Cargar PDF Formulario 29")
-st.info("Arrastra los archivos individuales o la carpeta completa")
+st.info("Arrastra la carpeta con los archivos o subelos individualmente 👇")
 
 uploaded = st.file_uploader("Subir archivos", type="pdf", accept_multiple_files=True)
 
@@ -200,14 +216,12 @@ if uploaded and st.button("🚀 Extraer Datos", type="primary"):
     if df_central is not None:
         st.success("✅ Extracción completada")
         
-        # Mostrar Tablas
-        st.markdown("#### 1️⃣ Codigos del Detalle Impuestos ")
+        st.markdown("#### 1️⃣ VOUCHER (Centralización)")
         st.dataframe(df_central.style.format({c: "{:,.0f}".format for c in df_central.columns if c!='Archivo'}))
         
-        st.markdown("#### 2️⃣ Codigos de los Totales a Pagar ")
+        st.markdown("#### 2️⃣ VOUCHER (Pagos)")
         st.dataframe(df_totales.style.format({c: "{:,.0f}".format for c in df_totales.columns if c!='Archivo'}))
         
-        # Descarga
         st.download_button(
             "📥 Descargar Excel Reporte",
             data=df_to_excel(df_central, df_totales),
