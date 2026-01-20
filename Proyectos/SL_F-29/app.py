@@ -44,14 +44,8 @@ def obtener_nombre_periodo(texto_periodo):
 # --- LÓGICA DE EXTRACCIÓN MEJORADA ---
 
 def match_codigo(texto_pdf, codigo_buscado):
-    """
-    Compara si el texto del PDF coincide con el código buscado,
-    ignorando ceros a la izquierda. 
-    Ej: texto_pdf="049" coincide con codigo_buscado=49
-    """
+    """Ignora ceros a la izquierda (049 == 49)"""
     try:
-        # Convertir ambos a entero para comparar numéricamente
-        # Esto hace que "049" == 49 sea True
         if int(texto_pdf) == int(codigo_buscado):
             return True
     except:
@@ -59,33 +53,26 @@ def match_codigo(texto_pdf, codigo_buscado):
     return False
 
 def extraer_valor_flexible(pagina, codigo_buscado, estrategia="columna"):
-    """
-    Busca valores usando dos estrategias (Columnas o Fila Completa).
-    Incluye corrección para códigos con ceros (049, 062).
-    """
+    """Busca valores usando dos estrategias (Columnas o Fila Completa)."""
     words = pagina.extract_words()
     ancho_pagina = pagina.width
     mitad_pagina = ancho_pagina / 2
     
-    # 1. UBICAR EL CÓDIGO (CON CORRECCIÓN DE CEROS)
+    # 1. UBICAR EL CÓDIGO
     codigo_obj = None
     for word in words:
-        # Usamos la función auxiliar para detectar "049" como "49"
         if match_codigo(word['text'], codigo_buscado):
             codigo_obj = word
             break
             
-    if not codigo_obj:
-        return 0
+    if not codigo_obj: return 0
 
     y_mid = (codigo_obj['top'] + codigo_obj['bottom']) / 2
     x_fin_codigo = codigo_obj['x1']
     esta_a_la_izquierda = codigo_obj['x0'] < mitad_pagina
     
-    # 2. FILTRAR CANDIDATOS (Números en la misma línea)
+    # 2. FILTRAR CANDIDATOS
     candidatos = []
-    
-    # Tolerancia vertical
     tolerancia = 6 if estrategia == "columna" else 8
     
     for word in words:
@@ -93,35 +80,26 @@ def extraer_valor_flexible(pagina, codigo_buscado, estrategia="columna"):
         
         # Filtro Vertical
         word_mid = (word['top'] + word['bottom']) / 2
-        if abs(word_mid - y_mid) > tolerancia:
-            continue
+        if abs(word_mid - y_mid) > tolerancia: continue
             
-        # Filtro Horizontal Básico: Debe estar a la derecha del código
-        if word['x0'] <= x_fin_codigo:
-            continue
+        # Filtro Horizontal
+        if word['x0'] <= x_fin_codigo: continue
             
         # ESTRATEGIAS DE MUROS
         if estrategia == "columna":
-            # Si es columna, no cruzar la mitad de la página
             if esta_a_la_izquierda:
                 if word['x1'] > (mitad_pagina + 15): continue
             else:
                 if word['x0'] < (mitad_pagina - 15): continue
-        
         elif estrategia == "fila_completa":
-            # Permitir buscar hasta el borde derecho de la hoja
             pass
             
         candidatos.append(word)
     
-    if not candidatos:
-        return 0
+    if not candidatos: return 0
 
-    # 3. SELECCIÓN DEL VALOR
-    # Ordenamos de izquierda a derecha
+    # 3. SELECCIÓN DEL VALOR (Inversa)
     candidatos.sort(key=lambda w: w['x0'])
-    
-    # Buscamos desde el final hacia atrás el primer número válido
     for word in reversed(candidatos):
         texto = word['text']
         val = limpiar_numero(texto)
@@ -135,7 +113,6 @@ def extraer_periodo(pagina):
     val = extraer_valor_flexible(pagina, 15, estrategia="fila_completa") 
     if val > 200000: return obtener_nombre_periodo(val)
     
-    # Fallback Regex
     try:
         texto = pagina.crop((0, 0, pagina.width, 250)).extract_text()
         match = re.search(r'\b(20[2-3]\d)(0[1-9]|1[0-2])\b', texto)
@@ -145,12 +122,7 @@ def extraer_periodo(pagina):
     return "Sin Periodo"
 
 def procesar_pdfs(archivos):
-    # --- LISTAS DE CÓDIGOS ACTUALIZADAS ---
-    # Se reemplazó 598 por 755
-    # Se mantienen 49 y 62 (el script ahora los encuentra aunque digan 049/062)
     codigos_columna = [538, 537, 62, 49, 48, 151, 155, 755] 
-    
-    # Se agregó 795 en la versión anterior
     codigos_totales = [91, 92, 93, 94, 795] 
     
     datos = []
@@ -167,11 +139,9 @@ def procesar_pdfs(archivos):
                 
                 fila = {'Archivo': nombre_fila}
                 
-                # Extraer Sección Central (Estrategia Columnas)
+                # Extraer Datos
                 for cod in codigos_columna:
                     fila[cod] = extraer_valor_flexible(pagina, cod, estrategia="columna")
-                    
-                # Extraer Sección Inferior (Estrategia Fila Completa)
                 for cod in codigos_totales:
                     fila[cod] = extraer_valor_flexible(pagina, cod, estrategia="fila_completa")
                 
@@ -182,10 +152,32 @@ def procesar_pdfs(archivos):
         progreso.progress((i+1)/len(archivos))
         
     progreso.empty()
-    
     if not datos: return None, None
     
     df = pd.DataFrame(datos)
+    
+    # --- ORDENAMIENTO CRONOLÓGICO (NUEVO) ---
+    def obtener_sort_key(nombre):
+        # Transforma "Enero 2023" en (2023, 1) para ordenar correctamente
+        try:
+            parts = nombre.split(" ")
+            if len(parts) >= 2:
+                mes_txt = parts[0]
+                anio_txt = parts[-1]
+                meses = {
+                    "Enero": 1, "Febrero": 2, "Marzo": 3, "Abril": 4, 
+                    "Mayo": 5, "Junio": 6, "Julio": 7, "Agosto": 8, 
+                    "Septiembre": 9, "Octubre": 10, "Noviembre": 11, "Diciembre": 12
+                }
+                return (int(anio_txt), meses.get(mes_txt, 99))
+        except:
+            pass
+        return (9999, 99) # Al final si falla
+
+    # Crear columna temporal para ordenar, ordenar y borrarla
+    df['_sort'] = df['Archivo'].apply(obtener_sort_key)
+    df = df.sort_values('_sort').drop(columns=['_sort'])
+    # ----------------------------------------
     
     # Rellenar ceros
     all_codes = codigos_columna + codigos_totales
@@ -228,3 +220,4 @@ if uploaded and st.button("🚀 Extraer Datos", type="primary"):
             file_name="Reporte_F29_Completo.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
+        
