@@ -122,7 +122,7 @@ def extraer_periodo(pagina):
     return "Sin Periodo"
 
 def procesar_pdfs(archivos):
-    codigos_columna = [538, 537, 62, 49, 48, 151, 155, 755] 
+    codigos_columna = [538, 537, 62, 49, 48, 151, 155, 755,77] 
     codigos_totales = [91, 92, 93, 94, 795] 
     
     datos = []
