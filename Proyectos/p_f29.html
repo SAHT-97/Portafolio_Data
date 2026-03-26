@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto: Auditoría Tributaria F29 | Sergio Hueramán</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo"><a href="../index.html">SAHT</a></div>
+        <nav class="navbar">
+            <a href="../index.html#proyectos">Volver a Proyectos</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <span class="badge badge-accent">ETL & Dashboard</span>
+        <h1>"Auditoría Tributaria: Procesador Automático de Formularios 29 en PDF"</h1>
+        <p class="project-summary">El objetivo de este proyecto es crear una aplicación en Python (Streamlit) que permita procesar automáticamente Formularios 29 en formato PDF (versión compacta), extrayendo por códigos oficiales del formulario, estructurándolos tabularmente y calculando reajuste de remanente y actualización de PPM automáticamente.</p>
+
+        <div class="project-meta">
+            <div class="meta-item">
+                <i class="fas fa-tools"></i>
+                <span>Python, Pandas, Streamlit, PDF Parsing</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-calendar"></i>
+                <span>Marzo 2026</span>
+            </div>
+        </div>
+
+        <div class="project-main-img">
+            <img src="../assets/Auditoria_F29/01_Home.png" alt="Vista principal del proyecto">
+        </div>
+
+        <div class="cta-box">
+            <p>Visita el proyecto en vivo</p>
+            <a href="https://formulario-f-29-yxrfc4gstixkhfrpas7xvc.streamlit.app/" target="_blank" class="btn btn-primary">Ir a la Aplicación Web</a>
+        </div>
+    </section>
+
+    <section class="section-container">
+        <h2>Metodología y Funcionalidades Principales</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-upload"></i></div>
+                <div class="timeline-content">
+                    <h3>1. Carga de Archivos Múltiples</h3>
+                    <p>El sistema permite al usuario subir una carpeta completa o seleccionar múltiples archivos PDF, correspondientes a Formularios 29 de distintos períodos tributarios.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="timeline-content">
+                    <h3>2. Lectura y Extracción de Datos Robusta</h3>
+                    <p>El análisis de cada PDF extrae automáticamente los valores relevantes basándose en los <strong>códigos oficiales del formulario F29</strong> (no en posiciones fijas), asegurando robustez ante las variaciones de formato dentro de los PDFs.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-table"></i></div>
+                <div class="timeline-content">
+                    <h3>3. Estructuración Tabular de la Información</h3>
+                    <p>Los datos extraídos se organizan de manera limpia en un DataFrame de pandas. Cada fila representa un formulario o período distinto y cada columna expone el valor de un código relevante procesado.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-calculator"></i></div>
+                <div class="timeline-content">
+                    <h3>4. Cálculos Automáticos Tributarios</h3>
+                    <p>El sistema calcula inteligentemente el <strong>PPM (Pago Provisional Mensual) actualizado</strong> y ejecuta el <strong>reajuste del crédito fiscal</strong> aplicando las reglas tributarias pertinentes, contrastando el valor real declarado vs el cálculo sistémico.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-chart-bar"></i></div>
+                <div class="timeline-content">
+                    <h3>5. Visualización de Resultados y Filtros</h3>
+                    <p>Las tablas finales se disponen a través de una interfaz clara e intuitiva en Streamlit. Es posible visualizar valores originales, calculados con la normativa, y aplicar filtros de periodos para revisión cruzada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container">
+        <h2>Visualización de Resultados y Módulos</h2>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="../assets/Auditoria_F29/02_TablaResultados.png" alt="Tabla General de Resultados F29">
+                <div class="overlay"><i class="fas fa-search-plus"></i> Ver Detalle</div>
+                <p class="hidden-desc"><strong>Estructuración de la Información:</strong> Los datos de múltiples F29 consolidados en una tabla tipo DataFrame filtrable y transponible. Se visualizan columnas dinámicas basadas en los códigos extraídos como Remanente, Base Imponible, Tasa PPM, Crédito IVA, Débitos, entre otros.</p>
+            </div>
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="../assets/Auditoria_F29/03_Reajuste.png" alt="Módulo Reajuste Crédito Fiscal">
+                <div class="overlay"><i class="fas fa-search-plus"></i> Ver Detalle</div>
+                <p class="hidden-desc"><strong>Módulo de Reajuste de Crédito Fiscal:</strong> Calcula automáticamente el Remanente de Crédito Fiscal actualizado considerando factores como el factor UTM histórico vs F29 actual (Aplicación de las reglas tributarias de IVA) asegurando su consistencia contra el informe de Contabilidad.</p>
+            </div>
+
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="../assets/Auditoria_F29/04_PPM.png" alt="Módulo Actualización PPM">
+                <div class="overlay"><i class="fas fa-search-plus"></i> Ver Detalle</div>
+                <p class="hidden-desc"><strong>Actualización de PPM (Pago Provisional Mensual):</strong> Motor de cálculo que evalúa automáticamente la corrección monetaria y el factor actualizado del PPM pagado versus el F29 extraído, mostrando comparativas a nivel de tabla dinámica entre histórico y actualizado.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container resources-section">
+        <h2>Recursos del Proyecto</h2>
+        <div class="resource-buttons">
+            <a href="https://formulario-f-29-yxrfc4gstixkhfrpas7xvc.streamlit.app/" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Visitar la Aplicación Web</a>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-envelope"></i> andrehueraman.st@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +569 56071607</p>
+                <p><i class="fas fa-map-marker-alt"></i> Temuco, Chile</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sergio-andrés-hueramán-tripailaf-6896371aa" target="_blank"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/SAHT-97" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>| &copy; 2026 Sergio Andrés Hueramán T. | </p>
+        </div>
+    </footer>
+
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        // Script simple para el modal de imágenes
+        var modal = document.getElementById("imgModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        function openModal(element) {
+            modal.style.display = "block";
+            modalImg.src = element.querySelector('img').src;
+            captionText.innerHTML = element.querySelector('.hidden-desc').innerText;
+        }
+
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function () { modal.style.display = "none"; }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

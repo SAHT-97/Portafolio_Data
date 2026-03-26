@@ -83,7 +83,8 @@ ul {
 .hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     padding: 4rem 10%;
     /* Degradado principal */
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -92,7 +93,10 @@ ul {
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .badge {
