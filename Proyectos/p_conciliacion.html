@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto: Conciliación Bancaria | Sergio Hueramán</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo"><a href="../index.html">SAHT</a></div>
+        <nav class="navbar">
+            <a href="../index.html#proyectos">Volver a Proyectos</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <span class="badge badge-accent">Web App / Apps Script</span>
+        <h1>Sistema de Conciliación Bancaria a Medida</h1>
+        <p class="project-summary">El objetivo central de este desarrollo fue diseñar e implementar un sistema de conciliación bancaria exclusivo para una oficina contable. Este sistema agrupa toda la información de pagos, cobros, cuentas y bancos en un único archivo de aplicación gestionado por Google Apps Script, de manera que el proceso diario se vuelve una tarea rápida, visual, precisa y libre de fricciones.</p>
+
+        <div class="project-meta">
+            <div class="meta-item">
+                <i class="fas fa-tools"></i>
+                <span>Apps Script, HTML/JS, Python</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-calendar"></i>
+                <span>Marzo 2026</span>
+            </div>
+        </div>
+
+        <div class="project-main-img">
+            <img src="../assets/Conciliacion/Panel_General.png" alt="Vista del Sistema de Conciliación">
+        </div>
+
+        <div class="cta-box">
+            <p>¿Te interesa una solución así?</p>
+            <a href="mailto:andrehueraman.st@gmail.com" class="btn btn-primary">Hablemos del proyecto</a>
+        </div>
+    </section>
+
+    <section class="section-container">
+        <h2>Metodología y Flujo de Uso</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-search-dollar"></i></div>
+                <div class="timeline-content">
+                    <h3>1. Selección del Movimiento</h3>
+                    <p>Búsqueda inteligente en la "Vista" principal, eligiendo movimientos bancarios pendientes para visualizar el monto disponible, banco y concepto.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-handshake"></i></div>
+                <div class="timeline-content">
+                    <h3>2. Vinculación con Cobros</h3>
+                    <p>Búsqueda de clientes por ID o nombre, seleccionando deudas pendientes en el sistema para cruzar con el movimiento bancario.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                <div class="timeline-content">
+                    <h3>3. Asignación de Pagos e Impuestos</h3>
+                    <p>Inclusión de pagos y obligaciones del cliente (como impuestos) en el balace del movimiento del banco de manera intuitiva.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-check-double"></i></div>
+                <div class="timeline-content">
+                    <h3>4. Ajustes y Conciliación Final</h3>
+                    <p>Ingreso de comisiones o conceptos adicionales, con un cálculo matemático en tiempo real que permite conciliar de manera exacta y guardando la información estructurada.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-container bg-light">
+        <h2>Análisis Técnico</h2>
+        <p>Para dotar al sistema de esta eficiencia y poder de procesamiento, se emplearon las siguientes estrategias técnicas:</p>
+
+        <strong>ETL (Extracción, Transformación y Carga)</strong>
+        <p>Se empleó Google Colab y Python (Pandas) para recuperar, limpiar profundamente y normalizar la información dispersa en múltiples archivos Excel.</p>
+        
+        <div class="code-wrapper" style="background-color: #1e1e1e; color: #d4d4d4; border-radius: 6px; padding: 1rem; margin: 1rem 0; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div style="display: flex; align-items: center; margin-bottom: 0.5rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem;">
+                <i class="fab fa-python" style="color: #3776ab; margin-right: 8px; font-size: 1.2rem;"></i>
+                <span style="font-family: monospace; font-size: 0.9rem; color: #858585;">ETL.py</span>
+            </div>
+            <pre style="margin: 0; font-family: Consolas, monospace; font-size: 0.85rem; line-height: 1.5; max-height: 350px; overflow-y: auto; overflow-x: auto; padding-right: 10px;"><code>from os import pathconf_names
+import pandas as pd
+
+# ── CARGA DE DATOS ──────────────────────────────────────────────────────────
+clientes = pd.read_excel("/content/drive/MyDrive/SVS/Libro1.xlsx")
+
+pathconf_c = "/content/drive/MyDrive/SVS/5.- PLANILLA DE COBROS 2026.xlsx"
+cobros = pd.read_excel(pathconf_c, skiprows=2)
+
+# ── LIMPIEZA INICIAL ─────────────────────────────────────────────────────────
+# Se encadena todo en un solo bloque para evitar reasignaciones innecesarias
+cobros_work = (
+    cobros
+    .iloc[:-14, 1:27]          # Filas sin totales + columnas útiles
+    .copy()
+)
+cobros_work.columns = cobros_work.columns.str.strip()
+
+# ── COLUMNAS A ELIMINAR ──────────────────────────────────────────────────────
+COLS_A_BORRAR = [
+    'Columna1', 'Ventas', 'Honorarios', 'Tasa de PPM', 'Software',
+    'Imp. Pagadas', 'IVA Pagado', 'TGR Pagado', 'Otros Pagado',
+    'Renta Pagada', 'Extra Pagado', 'Pdte. Pagado', 'Mens Pagado'
+]
+cobros_work.drop(columns=COLS_A_BORRAR, errors='ignore', inplace=True)
+
+# ── MELT (PIVOTE LARGO) ──────────────────────────────────────────────────────
+# Se usa la primera columna como identificador (presumiblemente 'Rut' u otro ID)
+id_col = cobros_work.columns[0]  # Nombre explícito, más legible que una lista
+
+cobros_melted = cobros_work.melt(
+    id_vars=id_col,
+    var_name="Cuentas",
+    value_name="Monto"
+)
+
+# ── LIMPIEZA DE MONTO ────────────────────────────────────────────────────────
+cobros_melted['Monto'] = (
+    pd.to_numeric(cobros_melted['Monto'], errors='coerce')
+    .fillna(0)
+)
+
+# Filtrar montos cero (se hace ANTES del merge para reducir el tamaño del df)
+cobros_melted = cobros_melted[cobros_melted['Monto'] != 0].copy()
+
+# ── MERGE CON CLIENTES ───────────────────────────────────────────────────────
+# CORRECCIÓN: el merge se hace sobre la columna id_col, no hardcodeado en 'Rut'
+# Ajusta left_on si tu columna identificadora tiene otro nombre
+cobros_id = cobros_melted.merge(
+    clientes[['Rut', 'ID', 'Cliente']],
+    left_on=id_col,
+    right_on='Rut',
+    how='left'
+)
+
+# Orden final de columnas
+cobros_id = cobros_id[['Cuentas', 'ID','Rut', 'Cliente', 'Monto']]
+
+# ── RESUMEN ──────────────────────────────────────────────────────────────────
+pd.options.display.float_format = '${:,.0f}'.format
+
+resumen = (
+    cobros_melted
+    .groupby('Cuentas')['Monto']
+    .agg(N_Movimientos='count', Monto_Total='sum')
+    .reset_index()
+    .rename(columns={'Cuentas': 'Tipo de Cuenta'})
+)
+
+print("── RESUMEN POR CUENTA ──")
+display(resumen)
+
+#Extracion Panilla de la cartola bancaria
+
+pathconf_b = "/content/drive/MyDrive/SVS/4.- CONCILIACIÓN 2026.xlsx"
+banco = pd.read_excel(pathconf_b, skiprows=1)
+
+
+banco = banco.iloc[:-19]
+banco = banco.iloc[: , :6]
+banco = banco.drop(columns=['SALDO','SALDO.1'])
+
+cf_banco = banco.columns[0:2].tolist()
+
+
+banco_melted = pd.melt(
+    banco,
+    id_vars= cf_banco,
+    var_name= "Banco",
+    value_name= "Monto",
+)
+
+nuevo_orden = ['Banco'] + cf_banco + ['Monto']
+f_banco  = banco_melted[nuevo_orden]
+f_banco.dropna(subset=['Monto'], inplace=True)
+
+
+
+# 1. Aseguramos que la columna Monto sea numérica
+# 'errors='coerce'' transformará cualquier texto sucio (como "$", "Total", "-") en NaN (vacío)
+f_banco['Monto'] = pd.to_numeric(f_banco['Monto'], errors='coerce')
+
+# 2. (Opcional) Si quieres convertir los vacíos a 0 para que no afecten la suma
+f_banco['Monto'] = f_banco['Monto'].fillna(0)
+
+
+
+
+
+
+
+
+# 3. AHORA sí ejecuta tu agrupación
+resumen = f_banco.groupby('Banco')['Monto'].agg(['count', 'sum']).reset_index()
+
+# Verificamos
+resumen.columns = ['Banco', 'Cantidad de Movimientos', 'Monto Total']
+
+# 3. Formato opcional (para que se lea mejor en pantalla)
+# Esto no cambia los datos, solo cómo se imprimen
+pd.options.display.float_format = '${:,.0f}'.format
+
+print("--- RESUMEN POR CUENTA ---")
+display(resumen)
+
+diccionario_cambios = {
+    'INGRESOS (+Abonos) / EGRESOS (-Cargos)': 'BANCO BCI',
+    'INGRESOS (+Abonos) / EGRESOS (-Cargos).1': 'BANCO ITAU'
+}
+
+# Reemplazamos los valores
+f_banco['Banco'] = f_banco['Banco'].replace(diccionario_cambios)
+
+
+banco_melted = pd.melt(
+    banco,
+    id_vars= cf_banco,
+    var_name= "Banco",
+    value_name= "Monto",
+)</code></pre>
+        </div>
+
+        <strong>Frontend Innovador (Web App)</strong>
+        <p>Desarrollado con HTML, CSS y JavaScript estructurando una interfaz intuitiva con navegación por pestañas y paneles flotantes de cálculo.</p>
+
+        <strong>Backend Especializado</strong>
+        <p>Desarrollo impulsado por Google Apps Script para manejar una compleja lógica capaz de conectar actualizaciones y saldos de bases de datos de forma dinámica en la nube.</p>
+
+        <strong>Modelado de Datos Relacional</strong>
+        <p>Un modelo de datos construido con integridad y conectores únicos (Identificadores) garantizando trazabilidad total de cobros, clientes, impuestos y listas para escalar integrando históricos o múltiples bancos.</p>
+
+    </section>
+
+    <section class="section-container">
+        <h2>Principales Insights (Valor Agregado)</h2>
+        <div class="insights-grid">
+            <div class="insight-card">
+                <div class="insight-icon"><i class="fas fa-database"></i></div>
+                <h3>Centralización Completa</h3>
+                <p>Se elimina la búsqueda en numerosas versiones dispersas de Excel. Ahora existe una única fuente de verdad validada y operando en vivo.</p>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon"><i class="fa-solid fa-calculator"></i></div>
+                <h3>Control en Tiempo Real</h3>
+                <p>Un robusto panel computa diferencias en vivo previniendo inexactitudes matemáticas, asegurando que todos los abonos cuadren perfectamente.</p>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Flujo Ágil e Intuitivo</h3>
+                <p>La navegación mediante pestañas replica de forma lógica el proceso contable mental del analista, reduciendo el tiempo de trabajo diario.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container">
+        <h2>Visualización de Resultados</h2>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="../assets/Conciliacion/Panel_General.png" alt="Panel General">
+                <div class="overlay"><i class="fas fa-search-plus"></i> Ver Detalle</div>
+                <p class="hidden-desc">La pestaña general proporciona un buscador inteligente superior para seleccionar y trabajar el movimiento bancario analizando sus opciones.</p>
+            </div>
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="../assets/Conciliacion/Panle_clientes.png" alt="Panel de Análisis y Clientes">
+                <div class="overlay"><i class="fas fa-search-plus"></i> Ver Detalle</div>
+                <p class="hidden-desc">Panel de Clientes: Permite visualizar el estado de pago del cliente y sus obligaciones con organizaciones (ej. SII o Previred). Desde este mismo panel interactivo se puede enviar directamente la cobranza.</p>
+            </div>
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="../assets/Conciliacion/Pagos_con_ el _formulario_de_conciliacion.png" alt="Formulario de Pagos">
+                <div class="overlay"><i class="fas fa-search-plus"></i> Ver Detalle</div>
+                <p class="hidden-desc">Pestañas de Cobros y Pagos: Integra procesos de pago de obligaciones, manejando las diferencias precisas en tiempo real para conciliar.</p>
+            </div>
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="../assets/Conciliacion/pdf_de_Cobranza.png" alt="PDF de Cobranza y WhatsApp">
+                <div class="overlay"><i class="fas fa-search-plus"></i> Ver Detalle</div>
+                <p class="hidden-desc">Automatización de Cobranza: Desarrollé un script que convierte automáticamente la información de la deuda en un PDF y se vincula con WhatsApp, facilitando enormemente el envío del estado de cuenta al cliente.</p>
+            </div>
+
+        </div>
+        <p style="font-size: 0.85rem; color: #666; font-style: italic;">
+            <i class="fa-solid fa-shield-halved"></i>
+            <strong>Nota:</strong> Las imágenes muestran la interfaz base del sistema de conciliación bancaria, preservando la total privacidad de las bases y clientes.
+        </p>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-envelope"></i> andrehueraman.st@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +569 56071607</p>
+                <p><i class="fas fa-map-marker-alt"></i> Temuco, Chile</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sergio-andrés-hueramán-tripailaf-6896371aa" target="_blank"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/SAHT-97" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>| &copy; 2025 Sergio Andrés Hueramán T. | </p>
+        </div>
+    </footer>
+
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        // Script simple para el modal de imágenes
+        var modal = document.getElementById("imgModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        function openModal(element) {
+            modal.style.display = "block";
+            modalImg.src = element.querySelector('img').src;
+            captionText.innerHTML = element.querySelector('.hidden-desc').innerText;
+        }
+
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function () { modal.style.display = "none"; }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

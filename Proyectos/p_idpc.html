@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto: Auditoría Tributaria F29 | Sergio Hueramán</title>
+    <title>Proyecto: Calculadora IDPC | Sergio Hueramán</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
@@ -20,14 +20,14 @@
     </header>
 
     <section class="project-hero">
-        <span class="badge badge-accent">ETL & Dashboard</span>
-        <h1>"Auditoría Tributaria: Procesador Automático de Formularios 29 en PDF"</h1>
-        <p class="project-summary">El objetivo de este proyecto es crear una aplicación en Python (Streamlit) que permita procesar automáticamente Formularios 29 en formato PDF (versión compacta), extrayendo por códigos oficiales del formulario, estructurándolos tabularmente y calculando reajuste de remanente y actualización de PPM automáticamente.</p>
+        <span class="badge badge-accent">Web App & Automatización</span>
+        <h1>Calculadora de Impuesto de Primera Categoría (IDPC)</h1>
+        <p class="project-summary">El objetivo de este proyecto es calcular automáticamente la Renta Líquida Imponible y la Base Imponible a partir de un balance en formato PDF (optimizado para Contalive, pero adaptable). Además, considera el incentivo al ahorro, ayuda con los códigos del F22 y permite exportar los resultados a PDF.</p>
 
         <div class="project-meta">
             <div class="meta-item">
                 <i class="fas fa-tools"></i>
-                <span>Python, Pandas, Streamlit, PDF Parsing</span>
+                <span>Python, Streamlit, PDF Parsing</span>
             </div>
             <div class="meta-item">
                 <i class="fas fa-calendar"></i>
@@ -36,12 +36,12 @@
         </div>
 
         <div class="project-main-img">
-            <img src="../assets/F29/tablageneral.png" alt="Vista principal del proyecto">
+            <img src="../assets/IDPC/PORTADA.png" alt="Vista principal del proyecto">
         </div>
 
         <div class="cta-box">
             <p>Visita el proyecto en vivo</p>
-            <a href="https://formulario-f-29-yxrfc4gstixkhfrpas7xvc.streamlit.app/" target="_blank" class="btn btn-primary">Ir a la Aplicación Web</a>
+            <a href="https://vhmfv4yejibduuanxvlg7y.streamlit.app/" target="_blank" class="btn btn-primary">Ir a la Aplicación Web</a>
         </div>
     </section>
 
@@ -49,38 +49,38 @@
         <h2>Metodología y Funcionalidades Principales</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-upload"></i></div>
-                <div class="timeline-content">
-                    <h3>1. Carga de Archivos Múltiples</h3>
-                    <p>El sistema permite al usuario subir una carpeta completa o seleccionar múltiples archivos PDF, correspondientes a Formularios 29 de distintos períodos tributarios.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
                 <div class="timeline-icon"><i class="fas fa-file-pdf"></i></div>
                 <div class="timeline-content">
-                    <h3>2. Lectura y Extracción de Datos Robusta</h3>
-                    <p>El análisis de cada PDF extrae automáticamente los valores relevantes basándose en los <strong>códigos oficiales del formulario F29</strong> (no en posiciones fijas), asegurando robustez ante las variaciones de formato dentro de los PDFs.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-table"></i></div>
-                <div class="timeline-content">
-                    <h3>3. Estructuración Tabular de la Información</h3>
-                    <p>Los datos extraídos se organizan de manera limpia en un DataFrame de pandas. Cada fila representa un formulario o período distinto y cada columna expone el valor de un código relevante procesado.</p>
+                    <h3>1. Carga de Balance en PDF</h3>
+                    <p>El sistema permite al usuario cargar un balance tributario en formato PDF. Actualmente ajustado para el software <strong>Contalive</strong>, pero diseñado con una arquitectura que facilita su adaptación a cualquier otro formato requerido.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-icon"><i class="fas fa-calculator"></i></div>
                 <div class="timeline-content">
-                    <h3>4. Cálculos Automáticos Tributarios</h3>
-                    <p>El sistema calcula inteligentemente el <strong>PPM (Pago Provisional Mensual) actualizado</strong> y ejecuta el <strong>reajuste del crédito fiscal</strong> aplicando las reglas tributarias pertinentes, contrastando el valor real declarado vs el cálculo sistémico.</p>
+                    <h3>2. Cálculo de Renta Líquida y Base Imponible</h3>
+                    <p>Extrae y procesa los datos del balance para calcular de forma directa y precisa la <strong>Renta Líquida Imponible</strong> y estructurar la base imponible del Impuesto de Primera Categoría.</p>
                 </div>
             </div>
             <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-chart-bar"></i></div>
+                <div class="timeline-icon"><i class="fas fa-piggy-bank"></i></div>
                 <div class="timeline-content">
-                    <h3>5. Visualización de Resultados y Filtros</h3>
-                    <p>Las tablas finales se disponen a través de una interfaz clara e intuitiva en Streamlit. Es posible visualizar valores originales, calculados con la normativa, y aplicar filtros de periodos para revisión cruzada.</p>
+                    <h3>3. Aplicación del Incentivo al Ahorro</h3>
+                    <p>Un módulo integrado considera el beneficio tributario del <strong>incentivo al ahorro</strong> (Art. 14E u homólogos que correspondan), aplicando la rebaja correspondiente directamente sobre el cálculo final.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-list-ol"></i></div>
+                <div class="timeline-content">
+                    <h3>4. Asignación de Códigos para F22</h3>
+                    <p>Simplifica enormemente la declaración final de renta al entregar una guía clara con los <strong>códigos del Formulario 22 (F22)</strong> para facilitar la posterior transcripción y cuadratura ante el SII.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-download"></i></div>
+                <div class="timeline-content">
+                    <h3>5. Exportación de Resultados a PDF</h3>
+                    <p>Todos los cálculos realizados, incluyendo los detalles de renta, base imponible e incentivos, pueden consolidarse en un <strong>reporte en PDF</strong> que el usuario descarga para su propio resguardo y archivos contables.</p>
                 </div>
             </div>
         </div>
@@ -91,28 +91,23 @@
 
         <div class="gallery-grid">
             <div class="gallery-item" onclick="openModal(this)">
-                <img src="../assets/F29/tablageneral.png" alt="Tabla General de Resultados F29">
+                <img src="../assets/IDPC/PORTADA.png" alt="Pantalla de inicio IDPC">
                 <div class="overlay"><i class="fas fa-search-plus"></i> Ver Detalle</div>
-                <p class="hidden-desc"><strong>Estructuración de la Información:</strong> Los datos de múltiples F29 consolidados en una tabla tipo DataFrame filtrable y transponible. Se visualizan columnas dinámicas basadas en los códigos extraídos como Remanente, Base Imponible, Tasa PPM, Crédito IVA, Débitos, entre otros.</p>
+                <p class="hidden-desc"><strong>Subida de Balances y Configuración:</strong> Interfaz moderna e intuitiva en Streamlit donde el contador o analista sube su balance en PDF, especificando configuraciones básicas para el procesamiento inteligente de la información.</p>
             </div>
             <div class="gallery-item" onclick="openModal(this)">
-                <img src="../assets/F29/Credito_fiscal.png" alt="Módulo Reajuste Crédito Fiscal">
+                <img src="../assets/IDPC/idps.png" alt="Detalle de Cálculos F22">
                 <div class="overlay"><i class="fas fa-search-plus"></i> Ver Detalle</div>
-                <p class="hidden-desc"><strong>Módulo de Reajuste de Crédito Fiscal:</strong> Calcula automáticamente el Remanente de Crédito Fiscal actualizado considerando factores como el factor UTM histórico vs F29 actual (Aplicación de las reglas tributarias de IVA) asegurando su consistencia contra el informe de Contabilidad.</p>
+                <p class="hidden-desc"><strong>Visualización de Cálculos Detallados:</strong> Muestra paso a paso la conformación de la RLI, deducciones, incentivo al ahorro y un mapeo de sugerencia hacia los códigos del Formulario 22 de Renta, listo para exportación.</p>
             </div>
-
-            <div class="gallery-item" onclick="openModal(this)">
-                <img src="../assets/F29/ppm.png" alt="Módulo Actualización PPM">
-                <div class="overlay"><i class="fas fa-search-plus"></i> Ver Detalle</div>
-                <p class="hidden-desc"><strong>Actualización de PPM (Pago Provisional Mensual):</strong> Motor de cálculo que evalúa automáticamente la corrección monetaria y el factor actualizado del PPM pagado versus el F29 extraído, mostrando comparativas a nivel de tabla dinámica entre histórico y actualizado.</p>
-            </div>
+            <!-- Si hubiesen más imágenes, pueden ir aquí en futuras expansiones -->
         </div>
     </section>
 
     <section class="section-container resources-section">
         <h2>Recursos del Proyecto</h2>
         <div class="resource-buttons">
-            <a href="https://formulario-f-29-yxrfc4gstixkhfrpas7xvc.streamlit.app/" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Visitar la Aplicación Web</a>
+            <a href="https://vhmfv4yejibduuanxvlg7y.streamlit.app/" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Visitar la Aplicación Web</a>
         </div>
     </section>
 
